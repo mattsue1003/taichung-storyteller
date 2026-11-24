@@ -1,0 +1,1187 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="給居家服務員與陪伴員的台中懷舊話題庫：26 集一男一女對談的說書節目。">
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>台中說書人資料庫</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;900&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: 售票口式的節目單 —— 每一集是一張舊電影票根，上方是年代軸，點開是一張可以「聽」的說書稿 */
+:root{
+  --bg:#F1F1EC;          /* 舊磁磚白，帶一點青 */
+  --paper:#FAFBF7;       /* 票根紙 */
+  --ink:#1B2A31;         /* 墨色 */
+  --muted:#5A6A70;
+  --line:#CBD3CD;
+  --blue:#8A5410;        /* 太陽餅金 */
+  --blue-soft:#F3E4CC;
+  --mustard:#B8841F;     /* 票根上的戳章黃 */
+  --mustard-soft:#F3E7C8;
+  --care:#A8402F;        /* 注意事項 */
+  --care-soft:#F6E2DC;
+  --shadow:0 1px 0 rgba(27,42,49,.06),0 8px 24px -14px rgba(27,42,49,.35);
+  --f-display:"Noto Serif TC","Songti TC","PMingLiU",serif;
+  --f-body:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#11191D;--paper:#18232A;--ink:#E5EBE6;--muted:#9AABAF;--line:#2E3D44;
+  --blue:#E2B36E;--blue-soft:#3A2A14;--mustard:#E2B65A;--mustard-soft:#3A3020;
+  --care:#F0907C;--care-soft:#3C2420;--shadow:0 1px 0 rgba(0,0,0,.3),0 10px 26px -14px rgba(0,0,0,.8);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#11191D;--paper:#18232A;--ink:#E5EBE6;--muted:#9AABAF;--line:#2E3D44;
+  --blue:#E2B36E;--blue-soft:#3A2A14;--mustard:#E2B65A;--mustard-soft:#3A3020;
+  --care:#F0907C;--care-soft:#3C2420;--shadow:0 1px 0 rgba(0,0,0,.3),0 10px 26px -14px rgba(0,0,0,.8);color-scheme:dark}
+
+*{box-sizing:border-box}
+body{position:relative;z-index:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.75;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:1120px;margin:0 auto}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.3;margin:0}
+a{color:var(--blue)}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:2px;border-radius:6px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+
+/* ---------- Hero ---------- */
+header.hero{padding-block:48px 28px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:40px;align-items:end}
+.eyebrow{font-size:13px;letter-spacing:.18em;color:var(--mustard);font-weight:700}
+.hero h1{font-size:clamp(40px,7vw,76px);font-weight:900;letter-spacing:.04em;margin-top:8px}
+.hero h1 span{color:var(--blue)}
+.hero p.lead{max-width:34em;color:var(--muted);margin:14px 0 0}
+.steps{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.steps li{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.steps b{font-family:var(--f-display);font-size:26px;color:var(--blue);line-height:1.1;text-align:center}
+.steps strong{display:block;font-size:16px}
+.steps span{font-size:14.5px;color:var(--muted);line-height:1.6}
+
+/* ---------- Toolbar ---------- */
+.toolbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;border-bottom:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.search{flex:1 1 220px;min-width:0;position:relative}
+.search input{width:100%;padding:10px 14px 10px 40px;border:1.5px solid var(--line);border-radius:999px;background:var(--paper);font-size:16px}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:2}
+.birth{display:flex;align-items:center;gap:8px;font-size:15px;flex-wrap:wrap}
+.birth input{width:92px;padding:8px 10px;border:1.5px solid var(--mustard);border-radius:8px;background:var(--paper);font-size:16px;text-align:center}
+.birth small{color:var(--muted)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;width:100%}
+.chip{border:1.5px solid var(--line);background:var(--paper);border-radius:999px;padding:5px 14px;font-size:15px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--paper)}
+.chip .n{opacity:.7;margin-left:4px;font-size:13px}
+
+/* ---------- Timeline ---------- */
+section.block{margin-top:40px}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sec-head h2{font-size:26px}
+.sec-head p{margin:0;color:var(--muted);font-size:15px}
+.tl-scroll{overflow-x:auto;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 14px 10px}
+.tl{position:relative;min-width:900px}
+.tl-axis{position:relative;height:28px;border-bottom:1.5px solid var(--ink);margin-bottom:8px}
+.tl-axis .tick{position:absolute;bottom:-1px;transform:translateX(-50%);font-size:12px;color:var(--muted);text-align:center;line-height:1.25}
+.tl-axis .tick::after{content:"";display:block;width:1.5px;height:6px;background:var(--ink);margin:2px auto 0}
+.tl-age{position:relative;height:22px}
+.tl-age .age{position:absolute;transform:translateX(-50%);font-size:12px;color:var(--mustard);font-weight:700;white-space:nowrap}
+.tl-rows{position:relative}
+.tl-bar{position:absolute;height:24px;border-radius:5px;background:var(--blue-soft);border:1px solid var(--blue);color:var(--ink);font-size:13px;padding:0 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer;text-align:left;line-height:22px}
+.tl-bar:hover{background:var(--blue);color:var(--paper)}
+.tl-bar.dim{opacity:.25}
+.tl-life{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(90deg,transparent 0 6px,color-mix(in srgb,var(--mustard) 10%,transparent) 6px 7px);border-left:2px dashed var(--mustard);pointer-events:none}
+
+/* ---------- Ticket cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.ticket{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 74px;background:var(--paper);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);cursor:pointer;text-align:left;padding:0;transition:transform .15s ease}
+.ticket:hover{transform:translateY(-2px)}
+.ticket .main{padding:16px 16px 14px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.ticket .cat{font-size:12.5px;letter-spacing:.1em;color:var(--blue);font-weight:700}
+.ticket h3{font-size:21px;font-weight:900}
+.ticket .sub{font-size:14.5px;color:var(--muted);line-height:1.6}
+.ticket .meta{margin-top:auto;padding-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:12.5px;border-radius:5px;padding:1px 8px;background:var(--bg);color:var(--muted)}
+.tag.age{background:var(--mustard-soft);color:var(--ink);font-weight:500}
+.tag.care{background:var(--care-soft);color:var(--care);font-weight:700}
+.stub{border-left:2px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;padding:10px 4px;position:relative}
+.stub::before,.stub::after{content:"";position:absolute;left:-10px;width:18px;height:18px;border-radius:50%;background:var(--bg);border:1px solid var(--line)}
+.stub::before{top:-10px;clip-path:inset(50% 0 0 0)}
+.stub::after{bottom:-10px;clip-path:inset(0 0 50% 0)}
+.stub .no{font-size:11px;color:var(--muted)}
+.stub .num{font-family:var(--f-display);font-size:30px;font-weight:900;color:var(--mustard);line-height:1}
+.stub .yr{font-size:11.5px;color:var(--muted);writing-mode:vertical-rl;letter-spacing:.06em}
+.empty{padding:40px;text-align:center;color:var(--muted);background:var(--paper);border:1px dashed var(--line);border-radius:12px}
+
+/* ---------- Guide ---------- */
+.guide{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.gcard{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px}
+.gcard h3{font-size:19px;margin-bottom:8px}
+.gcard ul{margin:0;padding-left:1.2em}
+.gcard li{margin:4px 0;font-size:15.5px}
+.gcard.warn{border-color:var(--care);background:var(--care-soft)}
+.gcard.warn h3{color:var(--care)}
+.conv{display:grid;gap:10px}
+.conv label{font-size:14px;color:var(--muted)}
+.conv input{width:100%;padding:8px 10px;border:1.5px solid var(--line);border-radius:8px;background:var(--bg);font-size:17px}
+.conv output{display:block;font-size:16px;line-height:1.9}
+.conv output b{color:var(--blue)}
+
+/* ---------- Episode sheet ---------- */
+dialog{border:none;padding:0;overflow:hidden;max-width:880px;width:calc(100% - 24px);max-height:calc(100% - 24px);border-radius:16px;background:var(--paper);color:var(--ink);box-shadow:0 30px 80px -20px rgba(0,0,0,.5)}
+dialog::backdrop{background:rgba(10,18,22,.55)}
+.sheet{display:flex;flex-direction:column;max-height:calc(100vh - 24px)}
+.sheet-head{padding:22px 22px 16px;border-bottom:2px dashed var(--line);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start}
+.sheet-head .cat{font-size:13px;letter-spacing:.1em;color:var(--blue);font-weight:700}
+.sheet-head h2{font-size:clamp(26px,4.5vw,36px);font-weight:900;margin-top:4px}
+.sheet-head .sub{color:var(--muted);margin-top:4px}
+.sheet-head .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.x{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:var(--bg);cursor:pointer;font-size:22px;line-height:1}
+.sheet-body{overflow-y:auto;padding:0 22px 28px}
+.player{position:sticky;top:0;z-index:2;background:var(--paper);padding:14px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center;border-bottom:1px solid var(--line)}
+.play{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--paper);border:none;border-radius:999px;padding:10px 20px;font-size:17px;font-weight:700;cursor:pointer}
+.play svg{width:18px;height:18px;fill:currentColor}
+.ghost{background:transparent;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;font-size:15px}
+.rate{display:flex;gap:4px;align-items:center;font-size:14px;color:var(--muted)}
+.rate button{border:1.5px solid var(--line);background:var(--bg);border-radius:6px;padding:3px 9px;cursor:pointer;font-size:14px}
+.rate button[aria-pressed="true"]{border-color:var(--blue);color:var(--blue);font-weight:700}
+.player .note{font-size:13.5px;color:var(--muted);width:100%}
+.seek{flex:1 1 140px;min-width:100px;accent-color:var(--mustard);height:28px}
+.time{font-size:13px;color:var(--muted);min-width:5.5em;text-align:right}
+.hosts{display:flex;flex-wrap:wrap;gap:8px 18px;margin:16px 0 0;font-size:14.5px;color:var(--muted)}
+.hosts span{display:inline-flex;align-items:center;gap:8px}
+.who{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-weight:900;font-size:18px;flex:none}
+.hosts .who{width:28px;height:28px;font-size:14px}
+.who.m{background:var(--blue);color:var(--paper)}
+.who.f{background:var(--mustard);color:var(--paper)}
+.story{font-size:18px;line-height:1.9;margin:16px 0 6px;max-width:42em;display:grid;gap:12px}
+.turn{display:grid;grid-template-columns:38px minmax(0,1fr);gap:10px;align-items:start}
+.turn.f{grid-template-columns:minmax(0,1fr) 38px}
+.turn.f .who{order:2}
+.bubble{border-radius:14px;padding:10px 14px;border:1.5px solid transparent;min-width:0}
+.turn.m .bubble{background:var(--blue-soft);border-top-left-radius:4px;margin-right:24px}
+.turn.f .bubble{background:var(--mustard-soft);border-top-right-radius:4px;margin-left:24px}
+.turn.m.now .bubble{border-color:var(--blue)}
+.turn.f.now .bubble{border-color:var(--mustard)}
+.bubble .name{display:block;font-size:13px;letter-spacing:.06em;color:var(--muted);font-weight:700;line-height:1.5}
+.story .s{border-radius:4px}
+.story .s.on{background:var(--paper);box-shadow:0 0 0 3px var(--paper)}
+.sheet h4{font-family:var(--f-display);font-size:20px;margin:28px 0 10px;display:flex;align-items:center;gap:10px}
+.sheet h4::after{content:"";flex:1;height:1px;background:var(--line)}
+.qs{display:grid;gap:12px}
+.qgroup{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--bg)}
+.qgroup .lv{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--blue)}
+.qgroup .lv small{font-weight:400;color:var(--muted);letter-spacing:0;margin-left:6px}
+.qgroup ul{margin:6px 0 0;padding-left:1.2em}
+.qgroup li{margin:4px 0}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.box{border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.box b{display:block;font-size:14px;color:var(--muted);font-weight:500;margin-bottom:4px}
+.box ul{margin:0;padding-left:1.2em}
+.words{display:flex;flex-wrap:wrap;gap:8px}
+.word{border:1px solid var(--line);border-radius:8px;padding:6px 10px;background:var(--bg);font-size:15px;line-height:1.5}
+.word em{font-style:normal;font-family:var(--f-mono);font-size:13px;color:var(--blue);display:block}
+.carebox{border-left:4px solid var(--care);background:var(--care-soft);padding:12px 16px;border-radius:0 10px 10px 0}
+.carebox b{color:var(--care)}
+.copyrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:8px 18px;border-radius:999px;font-size:15px;z-index:50}
+
+footer{margin-top:48px;color:var(--muted);font-size:14px}
+/* ---------- 台北天際線 ---------- */
+.sky{display:block;width:100%;color:var(--blue)}
+.sky .far{fill:currentColor;opacity:.35}
+.sky .near{fill:currentColor}
+.bgsky{position:fixed;left:0;right:0;bottom:0;height:clamp(120px,22vh,220px);z-index:-1;pointer-events:none;opacity:.11}
+.bgsky .sky{height:100%}
+.band{margin:4px 0 0;height:clamp(84px,13vw,150px);opacity:.5;border-bottom:2px solid var(--blue);overflow:hidden}
+.band .sky{height:100%}
+.band-cap{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:space-between;font-size:12.5px;color:var(--muted);letter-spacing:.06em;margin:6px 0 0}
+.ico{width:1.15em;height:1.15em;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:-.18em}
+.chip{display:inline-flex;align-items:center;gap:6px}
+.ticket .cat,.sheet-head .cat{display:flex;align-items:center;gap:6px}
+.ticket .badge{position:absolute;top:12px;right:86px;width:38px;height:38px;border-radius:50%;background:var(--blue-soft);color:var(--blue);display:grid;place-items:center}
+.ticket .badge .ico{width:22px;height:22px}
+.ticket h3{padding-right:44px}
+footer{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:clamp(110px,20vh,200px)}
+
+
+@media (max-width:760px){
+  header.hero{grid-template-columns:1fr;gap:22px;padding-top:28px}
+  .toolbar{position:static}
+  .sheet-head,.sheet-body{padding-left:16px;padding-right:16px}
+  .story{font-size:17.5px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="bgsky"><svg class="sky" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+<path class="far" d="M0 200V120l90-36 80 30 120-60 110 46 90-26 120 44 110-40 120 36 110-46 110 30 140-24v146z"/>
+<g class="near">
+<path d="M40 200v-56h150v56zM34 144v-8h162v8zM100 136V84h30v52zM96 84l19-22 19 22zM108 108a7 7 0 1 0 14 0a7 7 0 1 0-14 0z"/>
+<path d="M240 200v-14h120v14zM250 186v-6h100v6zM270 180l30-26 30 26zM292 154v-14h16v14zM296 140l4-10 4 10z"/>
+<path d="M248 200q-12-18 0-30M352 200q12-18 0-30" fill="none" stroke="currentColor" stroke-width="3"/>
+<path d="M400 200V120q60-60 120 0v80zM420 200v-60h80v60z" opacity=".95"/>
+<path d="M560 200l38-128 4 0 38 128zM592 200l10-110 10 110z"/>
+<path d="M700 200v-36h140v36zM692 164l40-28h76l40 28zM744 136v-16h52v16zM736 120l34-18 34 18z"/>
+<path d="M880 200v-90q50-30 100 0q50-30 100 0v90z"/>
+<path d="M1110 200v-70h50v70zM1104 130l31-26 31 26z"/>
+</g></svg></div>
+<div class="wrap">
+  <header class="hero">
+    <div>
+      <div class="eyebrow">給居家服務員・居家陪伴員的懷舊話題庫</div>
+      <h1>台中<span>說書人</span><br>資料庫</h1>
+      <p class="lead">每一集是一段台中人共同的記憶：綠川邊的火車站、台中公園的湖心亭、自由路的太陽餅、大甲媽祖遶境、東勢的鐵道……先聽在地的「阿城伯」和年輕主持人「小晴」一問一答把故事聊一遍，再帶著準備好的問題，到長輩身邊坐下來，請他們把「那時候」說給你聽。</p>
+    </div>
+    <ol class="steps" aria-label="使用方式">
+      <li><b>聽</b><div><strong>聽一集說書</strong><span>點開故事卡，按「開始說書」，聽阿城伯和小晴聊天。每集兩到三分鐘，通勤路上就能聽完。</span></div></li>
+      <li><b>備</b><div><strong>準備一兩個引子</strong><span>挑一句暖身問題、一首老歌或一個關鍵字。輸入長輩出生年，看看當時他們幾歲。</span></div></li>
+      <li><b>聊</b><div><strong>讓長輩當說書人</strong><span>你問、長輩說。記得慢慢來，不糾正記憶，多說「原來是這樣」。</span></div></li>
+    </ol>
+  </header>
+  <div class="band"><svg class="sky" viewBox="0 0 1200 200" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+<path class="far" d="M0 200V120l90-36 80 30 120-60 110 46 90-26 120 44 110-40 120 36 110-46 110 30 140-24v146z"/>
+<g class="near">
+<path d="M40 200v-56h150v56zM34 144v-8h162v8zM100 136V84h30v52zM96 84l19-22 19 22zM108 108a7 7 0 1 0 14 0a7 7 0 1 0-14 0z"/>
+<path d="M240 200v-14h120v14zM250 186v-6h100v6zM270 180l30-26 30 26zM292 154v-14h16v14zM296 140l4-10 4 10z"/>
+<path d="M248 200q-12-18 0-30M352 200q12-18 0-30" fill="none" stroke="currentColor" stroke-width="3"/>
+<path d="M400 200V120q60-60 120 0v80zM420 200v-60h80v60z" opacity=".95"/>
+<path d="M560 200l38-128 4 0 38 128zM592 200l10-110 10 110z"/>
+<path d="M700 200v-36h140v36zM692 164l40-28h76l40 28zM744 136v-16h52v16zM736 120l34-18 34 18z"/>
+<path d="M880 200v-90q50-30 100 0q50-30 100 0v90z"/>
+<path d="M1110 200v-70h50v70zM1104 130l31-26 31 26z"/>
+</g></svg></div>
+  <div class="band-cap" aria-hidden="true"><span>台中火車站</span><span>湖心亭</span><span>宮原眼科</span><span>路思義教堂</span><span>鎮瀾宮</span><span>歌劇院</span><span>東勢客家庄</span></div>
+
+  <div class="toolbar" role="search">
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <input id="q" type="search" placeholder="搜尋地名、年代、關鍵字（例如：湖心亭、太陽餅、地震）" aria-label="搜尋故事">
+    </label>
+    <label class="birth" for="by">
+      長輩出生年
+      <input id="by" inputmode="numeric" placeholder="例：35" aria-describedby="byhint">
+      <small id="byhint">民國或西元皆可</small>
+    </label>
+    <div class="chips" id="chips" aria-label="依主題篩選"></div>
+  </div>
+
+  <section class="block" aria-labelledby="tlh">
+    <div class="sec-head"><h2 id="tlh">年代軸</h2><p id="tlnote">每一條代表一集故事發生的年代。填入長輩出生年後，會標出他們在那時幾歲。</p></div>
+    <div class="tl-scroll"><div class="tl" id="tl"></div></div>
+  </section>
+
+  <section class="block" aria-labelledby="eph">
+    <div class="sec-head"><h2 id="eph">說書節目單</h2><p id="count"></p></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="block" aria-labelledby="gh">
+    <div class="sec-head"><h2 id="gh">陪伴對話小抄</h2><p>帶話題之前，先讀一次。</p></div>
+    <div class="guide">
+      <div class="gcard">
+        <h3>引導的五個小技巧</h3>
+        <ul>
+          <li><b>從感官開始</b>：一個聲音、一種味道、一張老照片，比「你記得嗎？」更容易打開話匣子。</li>
+          <li><b>先封閉、再開放</b>：先問「有沒有去過？」，長輩點頭後，再問「那時候是什麼樣子？」</li>
+          <li><b>不糾正記憶</b>：長輩說的年份、地點和史實不同沒關係，那是他們的版本。</li>
+          <li><b>給沉默時間</b>：問完等五到十秒，不急著補下一題。</li>
+          <li><b>把長輩當專家</b>：「這個我不懂，可以教我嗎？」會讓長輩更願意說。</li>
+        </ul>
+      </div>
+      <div class="gcard">
+        <h3>認知退化的長輩</h3>
+        <ul>
+          <li>多用二選一：「那時候坐公車，還是走路？」</li>
+          <li>同一個故事講很多次是正常的，每次都當第一次聽。</li>
+          <li>一次只問一件事，句子短、語速慢。</li>
+          <li>長輩說不出來時，給台階：「很久了，記不清也沒關係。」</li>
+          <li>老歌常常比言語更容易被記起，可以先一起哼。</li>
+        </ul>
+      </div>
+      <div class="gcard warn">
+        <h3>需要特別小心的話題</h3>
+        <ul>
+          <li>戰爭與空襲、二二八、白色恐怖、離鄉來台、天災失去家人。</li>
+          <li>這些不主動追問。長輩自己說起時，專心聽、點頭、說「那時候一定很辛苦」。</li>
+          <li>長輩情緒激動時，先停下來，陪著他、轉到眼前的事物（喝口水、看看窗外）。</li>
+          <li>不評論政治立場，不替長輩下結論。</li>
+          <li>談完若長輩持續低落，記錄下來並告知個管或督導。</li>
+        </ul>
+      </div>
+      <div class="gcard">
+        <h3>年號換算</h3>
+        <div class="conv">
+          <label for="cv">輸入任何年份（西元、民國都行）</label>
+          <input id="cv" inputmode="numeric" value="1963">
+          <output id="cvout" for="cv"></output>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>台中說書人資料庫｜內容依一般公開史料整理，年代以常見說法為準，細節可能因來源略有出入。故事是聊天的引子，長輩的回憶才是主角。</p>
+    <p>延伸找老照片：<a href="https://memory.culture.tw/" target="_blank" rel="noopener">國家文化記憶庫</a>、<a href="https://tm.ncl.edu.tw/" target="_blank" rel="noopener">國家圖書館臺灣記憶</a></p>
+  </footer>
+</div>
+
+<dialog id="dlg" aria-labelledby="dtitle"><div class="sheet" id="sheet"></div></dialog>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const ICON = {
+"全部":'<path d="M4 5h16M4 12h16M4 19h16"/>',
+"老街聚落":'<path d="M3 21h18M5 21v-8h14v8M9.500 21v-4a2.500 2.500 0 0 1 5 0v4M3.500 13l2-4h13l2 4M8 9V7h8v2M6.500 7l1.500-2.500h8L17.500 7"/>',
+"山城出遊":'<path d="M2 20l6.500-11 4 6 2.500-4 7 9zM17 6a2 2 0 1 0 0-.010"/>',
+"眷村族群":'<circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.500"/><path d="M2 20c0-4 3-6 6-6s6 2 6 6M14 20c0-3 1.500-5 4-5s4 2 4 5"/>',
+"產業手藝":'<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.900 4.900l2.100 2.100M17 17l2.100 2.100M4.900 19.100L7 17M17 7l2.100-2.100"/>',
+"生活日常":'<path d="M4 10.500V20h16v-9.500M3 10l2-5h14l2 5M3 10a2.250 2.250 0 0 0 4.500 0a2.250 2.250 0 0 0 4.500 0a2.250 2.250 0 0 0 4.500 0a2.250 2.250 0 0 0 4.500 0M9.500 20v-5h5v5"/>',
+"時代記憶":'<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M8 3v4M16 3v4M9.500 14H12v3.500"/>'
+};
+const ico = c=>`<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${ICON[c]||""}</svg>`;
+const CATS = ["老街聚落","山城出遊","眷村族群","產業手藝","生活日常","時代記憶"];
+
+const EPISODES = [
+{id:"01",cat:"老街聚落",title:"台中火車站與綠川",sub:"紅磚車站、鐘塔，和站前最熱鬧的那幾條街",from:1917,to:2016,place:"台中舊火車站、綠川、中區",
+story:`晴：阿城伯，以前台中人說「去火車頭」，指的是哪裡？
+城：就是台中火車站啊。紅磚牆、白色的線條，中間一座尖尖的鐘塔，遠遠就看得到。
+晴：那座紅磚車站是什麼時候蓋的？
+城：日本時代，大正六年，也就是一九一七年蓋好的。比它更早還有一座木造的車站。
+晴：以前在車站附近都做什麼？
+城：等車、接人、送人去當兵。出了車站，走沒幾步就是綠川，河邊種著樹，風吹過來很舒服。
+晴：綠川旁邊還有一條柳川對不對？
+城：對，日本時代整理河道，柳川兩岸種了垂柳，所以台中那時候被叫做「小京都」。
+晴：站前最熱鬧的地方在哪裡？
+城：中正路、繼光街、自由路那一帶。後來還有第一廣場，年輕人放假就約在那裡看電影、逛街。
+晴：聽起來整個台中的熱鬧都集中在車站前面。
+城：是啊，那時候坐火車進城的人，下了車就是最鬧熱的地方。
+晴：現在火車改走高架了，舊車站還在嗎？
+城：還在。民國一〇五年新的高架車站啟用，舊站停止載客，可是紅磚站房留下來，是國定古蹟。
+晴：綠川現在也變漂亮了。
+城：整治過了，河水變清，晚上點燈，很多人在河邊散步拍照。
+晴：各位朋友，下次可以問問長輩：「您第一次在台中火車站下車，是去做什麼？」`,
+keys:["紅磚車站","鐘塔","火車頭","綠川","柳川","小京都","第一廣場","高架車站"],
+senses:["火車進站的汽笛聲","綠川邊的樹蔭和風","紅磚牆和鐘塔的畫面"],
+q:{warm:["您坐過火車到台中站嗎？","您記得舊車站的鐘塔長什麼樣子嗎？"],recall:["以前在車站接過誰、送過誰？","站前那幾條街，您最常去哪一家店？","您年輕的時候去過第一廣場嗎？"],deep:["車站是很多人離家和回家的地方，您有沒有印象最深的一次？","老車站留下來了，您覺得留下老建築有什麼意義？"]},
+props:["台中舊火車站紅磚站房的老照片","綠川今昔對照照片"],
+words:[["火車頭","hué-tshia-thâu","火車站"]],
+now:"台中車站民國105年起改為高架新站，紅磚舊站為國定古蹟並保存下來；綠川已整治為親水步道。",care:""},
+
+{id:"02",cat:"老街聚落",title:"第一市場與中區",sub:"六角樓、百貨公司，和台中最熱鬧的年代",from:1908,to:2012,place:"台中中區、第二市場、宮原眼科",
+story:`晴：阿城伯，聽說以前台中最熱鬧的地方是中區？
+城：對啊，車站、市場、百貨公司、戲院，通通擠在那一區，走路就逛得完。
+晴：台中有第一市場、第二市場，它們是怎麼來的？
+城：都是日本時代蓋的公有市場。第一市場是明治年間，大約一九〇八年就有了，賣菜、賣魚、賣布的都有，一大早就擠滿人。
+晴：那第二市場呢？
+城：大正年間，一九一七年左右蓋的，那時候叫新富町市場。中間有一座六角樓，通道從那裡往外放射出去。
+晴：第二市場到現在還在嗎？
+城：還在啊，裡面有賣滷肉飯、菜頭粿、麵、菜和肉，很多老台中從小吃到大。
+晴：那第一市場呢？
+城：第一市場後來遭過火災，原地蓋成第一廣場，就是現在大家說的東協廣場。
+晴：中區那時候還有什麼？
+城：百貨公司、一間一間的戲院，聽老一輩說還有賣進口貨的委託行。過年前買新衣服，都要來中區。
+晴：那後來為什麼慢慢變安靜了？
+城：城市往西邊發展，新的百貨、新的商圈都在那邊，人就慢慢不來了，老房子也一間一間空下來。
+晴：現在中區好像又有人潮了。
+城：是啊，像宮原眼科，本來是日本時代的眼科醫院，荒廢很多年，整修以後變成賣冰淇淋、糕餅的店，門口天天排隊。
+晴：各位朋友，下次可以問問長輩：「您以前去中區，最常逛哪一家店、看哪一間戲院？」`,
+keys:["第一市場","第二市場","六角樓","中區","百貨公司","戲院","宮原眼科","東協廣場"],
+senses:["市場裡的叫賣聲","滷肉飯和菜頭粿的香味","六角樓和老街騎樓的畫面"],
+q:{warm:["您去過第二市場嗎？","您喜歡逛市場還是逛百貨公司？"],recall:["以前過年前去中區都買些什麼？","您記得哪一間戲院？看過什麼電影？","市場裡有沒有您一定會光顧的攤子？"],deep:["一個地方從熱鬧變安靜，再慢慢熱鬧起來，您有什麼感觸？","您年輕時最喜歡的一條街，現在還想去走走嗎？"]},
+props:["第二市場六角樓的照片","宮原眼科的今昔照片","老戲院的電影海報或戲票照片"],
+words:[["鬧熱","lāu-jia̍t","熱鬧"]],
+now:"第二市場仍在營業，宮原眼科在民國101年整修開幕後成為熱門景點，中區也有許多老屋再利用。",care:""},
+
+{id:"03",cat:"生活日常",title:"太陽餅與自由路",sub:"一層一層的酥皮，包著甜甜的麥芽",from:1950,to:2000,place:"台中自由路",
+story:`晴：阿城伯，說到台中名產，第一個想到的一定是太陽餅吧？
+城：那還用說。以前去台中玩，回去一定要提一盒太陽餅，不然會被唸。火車上常常看到人手一盒，紙盒上印著大大的太陽。
+晴：太陽餅是怎麼來的？
+城：說法不太一樣。有一種說法是，以前就有包麥芽糖的餅，後來有餅店師傅把它改良，做成現在這樣。
+晴：那「太陽」這個名字呢？
+城：也有好幾種說法。比較常聽到的是跟太陽堂這家老餅店有關，名字叫久了，大家就都叫太陽餅。
+晴：太陽餅的內餡是什麼？
+城：麥芽糖做的餡，甜甜的、黏黏的。外面是一層一層的酥皮，咬一口，皮屑掉得滿身都是。
+晴：哈哈，那要怎麼吃才不會掉滿地？
+城：拿一張紙在下面接著。也有人把它剝碎，泡在熱茶或熱牛奶裡，變得軟軟的，老人家很喜歡。
+晴：聽說自由路上有很多餅店？
+城：對，自由路一整排都是餅店，招牌一間比一間大，都說自己是老店，外地人常常看到眼花。
+晴：那時候買太陽餅都是送誰？
+城：送親戚、送老闆、送朋友，有時候探病也提一盒。一盒餅，代表有來台中看你。收到的人也會分給左鄰右舍，一人一塊，配茶聊天。
+晴：各位朋友，下次可以問問長輩：「您吃太陽餅喜歡直接吃，還是泡著吃？以前都送給誰？」`,
+keys:["太陽餅","自由路","麥芽餡","酥皮","餅店","伴手禮"],
+senses:["酥皮碎屑掉滿身","麥芽的甜味","自由路一整排餅店招牌"],
+q:{warm:["您吃過太陽餅嗎？","您喜歡吃甜的嗎？"],recall:["以前出門玩都會帶什麼回家？","您記得自由路上哪一家餅店？","有沒有人送過您太陽餅？是誰？"],deep:["送禮的時候，您最在意的是什麼？","有沒有一種味道，一吃就會想到某個人？"]},
+props:["太陽餅的照片或餅盒","一小塊泡軟的太陽餅（視飲食狀況）"],
+words:[],
+now:"自由路一帶仍有多家餅店，太陽餅依然是台中最具代表性的伴手禮之一。",care:"太陽餅很甜、酥皮易碎容易嗆到，糖尿病或吞嚥困難的長輩請用照片聊天，不要隨意帶給長輩吃。"},
+
+{id:"04",cat:"山城出遊",title:"台中公園與湖心亭",sub:"日月湖上划船，湖心亭前拍一張照",from:1903,to:1990,place:"台中公園、日月湖、湖心亭",
+story:`晴：阿城伯，台中公園是很老的公園吧？
+城：很老了。日本時代，明治年間，大約一九〇三年就開闢了，是台中最早的公園之一。裡面有大樹、有小山丘，還有一個很大的湖。
+晴：公園裡最有名的是什麼？
+城：湖心亭啊。日月湖上那座兩個屋頂連在一起的亭子，紅紅白白的，現在還印在很多台中的紀念品上。
+晴：湖心亭為什麼要蓋在那裡？
+城：明治四十一年，也就是一九〇八年，台灣縱貫鐵路全線通車，典禮就在台中公園舉行。湖心亭是那時候蓋給日本親王休息的。
+晴：原來它跟鐵路有關係！
+城：是啊，後來就保留下來，成為台中公園的招牌，現在是市定古蹟。
+晴：以前大家去台中公園都做什麼？
+城：划船啊。租一條小船，在日月湖上慢慢划，划到湖心亭旁邊，再拍一張照片。湖邊還有人坐著釣魚、餵魚，小孩子在旁邊跑來跑去。
+晴：聽起來很適合約會。
+城：很多台中人的第一次約會就在那裡。男生負責划，女生撐著傘坐著，划不好還會轉圈圈。
+晴：哈哈，那拍照呢？
+城：公園門口有拍照的師傅，幫你在湖心亭前面拍，過幾天再去拿相片。很多人家裡的相簿都有這一張。
+晴：各位朋友，下次可以問問長輩：「您在台中公園划過船嗎？那時候是跟誰去的？」`,
+keys:["台中公園","日月湖","湖心亭","划船","縱貫鐵路","約會","拍照師傅"],
+senses:["划船時船槳拍水的聲音","湖邊的樹蔭和涼風","湖心亭倒映在水面的畫面"],
+q:{warm:["您去過台中公園嗎？","您划過船嗎？"],recall:["您在台中公園拍過照片嗎？跟誰一起拍的？","第一次約會是去哪裡？","以前放假最常去哪一個公園？"],deep:["有沒有一張老照片，您一直很珍惜？","如果能回到年輕時的某一天，您想回到哪一天？"]},
+props:["湖心亭的照片","家裡在公園拍的老照片","〈月亮代表我的心〉"],
+words:[["公園","kong-hn̂g","公園"]],
+now:"台中公園仍是市民散步休憩的地方，湖心亭為市定古蹟，日月湖上仍可划船。",care:""},
+
+{id:"05",cat:"時代記憶",title:"東海大學與路思義教堂",sub:"相思林裡的大學，和一座像合掌的教堂",from:1955,to:2000,place:"台中西屯大度山、東海大學",
+story:`晴：阿城伯，東海大學在大度山上，以前那裡是什麼樣子？
+城：很荒涼啊。紅土、雜草、風很大，很少人住，上山的路也不好走。民國四十四年，也就是一九五五年，東海大學在那裡創校。
+晴：在那麼荒涼的地方蓋大學？
+城：是啊，所以學校種了很多樹，相思林一大片，到現在走進去還是很涼。
+晴：東海最有名的就是路思義教堂吧？
+城：對，民國五十二年蓋好的。是建築師貝聿銘和陳其寬設計的，形狀像兩隻手合起來在祈禱。
+晴：它為什麼叫路思義？
+城：是紀念一位美國的傳教士，他以前在中國傳教、辦學。他的兒子出錢幫忙蓋教堂，就用父親的名字來命名。
+晴：教堂裡面是什麼樣子？
+城：沒有柱子，抬頭看，光從屋頂中間那一條縫透進來，很安靜，坐一下心就靜下來了。很多新人在教堂前面拍婚紗照。
+晴：去東海還有什麼一定要做的？
+城：喝東海的牛奶、吃冰淇淋。學校有自己的牧場，乳品小棧前面常常排隊。夏天買一支冰淇淋，坐在樹下慢慢吃，最享受了。
+晴：那東海附近呢？
+城：學生越來越多，旁邊變成大學城，有小吃、書店、租房子的，晚上很熱鬧。
+晴：各位朋友，下次可以問問長輩：「您去過東海大學嗎？有沒有在教堂前面拍過照？」`,
+keys:["大度山","東海大學","路思義教堂","貝聿銘","相思林","東海牛奶","乳品小棧"],
+senses:["相思林裡的鳥叫聲","東海鮮奶的濃郁香味","教堂屋頂透進來的那一道光"],
+q:{warm:["您去過東海大學嗎？","您喝過東海的牛奶嗎？"],recall:["您在路思義教堂前面拍過照嗎？","您或家人有沒有人在大學唸過書？是哪裡？","以前去大度山是怎麼去的？"],deep:["如果能再當一次學生，您想學什麼？","有沒有一個安靜的地方，能讓您心情平靜下來？"]},
+props:["路思義教堂的照片","一小瓶鮮奶（視飲食狀況）","婚紗照或畢業照"],
+words:[],
+now:"路思義教堂於2019年公告為國定古蹟，2024年整修完成後重新啟用；東海乳品小棧仍是熱門去處。",care:"乳製品可能引起腸胃不適，帶牛奶前先確認長輩的飲食狀況。"},
+
+{id:"06",cat:"生活日常",title:"大甲媽祖遶境",sub:"九天八夜，跟著媽祖走一趟",from:1960,to:2026,place:"大甲鎮瀾宮、遶境沿途",
+story:`晴：阿城伯，常聽人說「三月瘋媽祖」，是在說什麼？
+城：農曆三月是媽祖生日，前後各地都在迎媽祖。台中最有名的，就是大甲鎮瀾宮的媽祖遶境。
+晴：遶境要走多久？
+城：九天八夜。從大甲出發，經過台中、彰化、雲林，走到嘉義新港，再走回大甲，三百多公里。
+晴：三百多公里，都用走的？
+城：很多香客真的一步一步走，穿著球鞋、背著小包包、戴著斗笠，腳起水泡也繼續走。晚上就睡在廟裡、學校或路邊，天亮再出發。
+晴：出發的日子是怎麼決定的？
+城：每年元宵節晚上，在廟裡擲筊請示媽祖，擲出來了，大家才知道哪一天起駕。
+晴：我聽說有人會趴在路上讓轎子過去？
+城：那叫鑽轎腳。轎子還沒到，路邊就已經排了長長一列。信眾排在路邊，趴下來讓媽祖的轎子從頭上經過，求平安、求身體健康。
+晴：走那麼遠，吃飯怎麼辦？
+城：沿路的人家都會擺桌子，請香客吃點心、喝茶、喝涼水，還有人讓香客借廁所、借地方休息。有人煮一大鍋湯，有人切水果，一盤一盤端出來。
+晴：好溫暖喔。
+城：是啊，大家都說這是「人情味」。不管認不認識，路過就是客人。
+晴：各位朋友，下次可以問問長輩：「您有沒有跟過媽祖遶境，或在路邊迎過媽祖？」`,
+keys:["鎮瀾宮","媽祖遶境","九天八夜","擲筊","鑽轎腳","香客","點心攤"],
+senses:["鞭炮和鑼鼓聲","沿途的香火味","路邊排隊鑽轎腳的人潮"],
+q:{warm:["您拜過媽祖嗎？","您看過媽祖遶境嗎？"],recall:["您有沒有跟著走過進香的路？走了多遠？","以前廟會的時候，家裡會準備什麼？","您鑽過轎腳嗎？那時候在求什麼？"],deep:["遇到困難的時候，是什麼讓您心裡比較安定？","您覺得陌生人之間的人情味，現在還有嗎？"]},
+props:["大甲媽祖遶境的照片","廟會鑼鼓與鞭炮聲的錄音","平安符或香火袋"],
+words:[["媽祖生","Má-tsóo-senn","媽祖生日"]],
+now:"大甲媽祖遶境每年仍吸引大批信眾，2026年於4月17日晚間起駕，九天八夜往返新港奉天宮。",care:"尊重長輩各自的信仰，不同宗教背景的長輩可改聊廟會的熱鬧與人情味；行動不便的長輩若想參與，請以安全為先。"},
+
+{id:"07",cat:"產業手藝",title:"大甲藺草編織",sub:"一頂草帽、一張草蓆，是媽媽的手藝",from:1900,to:1970,place:"大甲、苑裡一帶",
+story:`晴：阿城伯，大甲的草帽、草蓆很有名，是用什麼做的？
+城：用藺草。大安溪下游那一帶的濕地長一種藺草，三角形的莖，曬乾以後很有韌性，不容易斷，摸起來滑滑的。
+晴：最早是誰開始編的？
+城：有一種說法是清朝的時候，當地道卡斯族的婦女先拿藺草來編蓆子，後來漢人也跟著學。
+晴：大甲和苗栗的苑裡，好像都有在做？
+城：對，大甲和苑裡只隔一條溪，兩邊的婦女都會編，做出來的東西大家都叫大甲帽、大甲蓆。
+晴：編織的都是女生嗎？
+城：大多是婦女。白天做家事、下田，晚上坐在門口或客廳，一邊聊天一邊編，手指頭都磨出繭。小女孩從小在旁邊看，長大自然也就會了。
+晴：做好的帽子賣到哪裡？
+城：日本時代就很有名，聽說還賣到日本和外國去。很多人家靠媽媽編帽子、編蓆子，貼補孩子的學費。
+晴：那後來呢？
+城：民國六十年代以後，工商業越來越發達，很多婦女轉去工廠上班，機器做的東西又便宜，手工編織就慢慢少了。
+晴：您小時候睡過草蓆嗎？
+城：睡過啊！夏天鋪一張草蓆，躺上去涼涼的，還有一股草香。睡久了背上會印出一條一條的紋路。
+晴：各位朋友，下次可以問問長輩：「您家裡以前有人編過草帽或草蓆嗎？」`,
+keys:["藺草","大甲帽","大甲蓆","苑裡","婦女編織","夏天草蓆","草香"],
+senses:["藺草的青草香","草蓆躺起來涼涼的","手指編織時沙沙的聲音"],
+q:{warm:["您睡過草蓆嗎？","您戴過草帽嗎？"],recall:["您家裡誰最會做手工？做什麼？","以前夏天沒有冷氣，都怎麼睡才涼？","您小時候有沒有幫忙做家庭代工？"],deep:["媽媽或家裡的長輩，有什麼手藝讓您很佩服？","您覺得手工做的東西，跟買來的有什麼不一樣？"]},
+props:["一頂藺草帽或一小塊草蓆","藺草編織的照片"],
+words:[["草蓆","tsháu-tshio̍h","草蓆"]],
+now:"藺草編織已成為傳統工藝，苗栗苑裡設有藺草文化館，大甲一帶仍有人保存編織技藝。",care:""},
+
+{id:"08",cat:"山城出遊",title:"台中港與梧棲漁港",sub:"十大建設蓋起來的港口，和漁市裡的海鮮",from:1973,to:2000,place:"梧棲、台中港、清水",
+story:`晴：阿城伯，台中港是什麼時候蓋的？
+城：民國六十年代。那時候政府推動十大建設，台中港就是其中一項。
+晴：那時候為什麼要在台中蓋港口？
+城：北部有基隆港，南部有高雄港，中部沒有大港口，貨都要繞一大圈。所以在梧棲、清水這邊的海邊開了新港。
+晴：蓋港口很不容易吧？
+城：很辛苦。海邊風很大、沙很多，要先築防波堤、挖航道，一段一段慢慢蓋。民國六十二年動工，大約四年以後，民國六十五年開始通航。
+晴：港口蓋好以後，地方有什麼改變？
+城：工作機會多了，工廠一間一間蓋起來，很多年輕人從外地來海線工作。港邊的貨車、貨櫃來來去去，從早忙到晚。
+晴：去梧棲都吃什麼？
+城：去梧棲漁港的觀光漁市啊！魚、蝦、螃蟹、小卷擺得滿滿的，買好了還可以請店家幫你煮。
+晴：聽起來好熱鬧。
+城：假日人擠人，老闆大聲喊「便宜賣喔」，大家提著一袋一袋的海鮮回家，有的人還會帶保冷箱來裝。
+晴：那附近的清水呢？
+城：清水的筒仔米糕很有名，香香的糯米加上肉臊，配一碗熱湯，吃完再去街上走走，到廟裡拜一拜。
+晴：各位朋友，下次可以問問長輩：「您去過梧棲漁港買海鮮嗎？最愛吃哪一種海產？」`,
+keys:["台中港","十大建設","梧棲漁港","觀光漁市","海鮮","清水米糕","海線"],
+senses:["港邊的海風和鹹味","漁市的叫賣聲","剛煮好的海鮮香味"],
+q:{warm:["您去過台中港或梧棲漁港嗎？","您喜歡吃魚還是蝦？"],recall:["您記得十大建設的年代嗎？那時候在做什麼工作？","以前去漁港買過什麼？","您吃過清水的米糕嗎？"],deep:["您覺得那個年代的台灣，最讓人懷念的是什麼？","您做過最辛苦、但最有成就感的事情是什麼？"]},
+props:["梧棲漁港或台中港的照片","一份米糕（視飲食狀況）"],
+words:[["港口","káng-kháu","港口"],["米糕","bí-ko","米糕"]],
+now:"台中港是中部重要的國際商港，梧棲漁港觀光漁市假日仍有許多遊客。",care:"海鮮與糯米可能有過敏、痛風或吞嚥的問題，帶食物前先確認長輩的飲食狀況。"},
+
+{id:"09",cat:"老街聚落",title:"豐原：廟東與慈濟宮",sub:"葫蘆墩的媽祖廟，和廟口吃不完的小吃",from:1920,to:2000,place:"豐原慈濟宮、廟東",
+story:`晴：阿城伯，豐原以前好像不叫豐原？
+城：以前叫葫蘆墩。日本時代，大正九年，也就是一九二〇年，才改名叫豐原。
+晴：葫蘆墩這個名字是怎麼來的？
+城：有一種說法是，那裡有幾座小土丘，形狀很像葫蘆，所以叫葫蘆墩。
+晴：豐原最有名的廟是哪一間？
+城：慈濟宮，拜媽祖的。廟裡有一個嘉慶年間的老香爐，很多老豐原人從小就在廟口玩，過年過節來拜拜，求平安。
+晴：那廟東呢？
+城：廟東就是慈濟宮東邊那條巷子，一攤一攤的小吃，從白天吃到晚上。巷子不寬，人一多就要側著身子走。
+晴：廟東都吃些什麼？
+城：菱角酥、肉丸、排骨酥麵、肉粽。菱角酥炸得酥酥的，常常要拿號碼牌排隊。肉丸是炸過的，皮Q內餡香，淋上醬汁，一口一口吃。
+晴：聽說豐原也是糕餅之鄉？
+城：對，豐原有好幾家百年餅店，以前結婚、訂婚的喜餅，很多人都指定要豐原的。大餅一盒一盒疊起來，送給親戚朋友報喜。
+晴：豐原跟八仙山也有關係嗎？
+城：有啊。日本時代八仙山林場的辦公室後來搬到豐原，現在還留著一排林務局的老宿舍。
+晴：各位朋友，下次可以問問長輩：「您吃過廟東的哪一攤？以前訂婚的喜餅是在哪裡買的？」`,
+keys:["葫蘆墩","豐原","慈濟宮","廟東","菱角酥","肉丸","喜餅"],
+senses:["廟口的香火味","剛炸好菱角酥的香味","巷子裡擠滿人的熱鬧聲"],
+q:{warm:["您去過豐原嗎？","您喜歡吃菱角嗎？"],recall:["您訂婚、結婚的時候，喜餅是在哪裡訂的？","您小時候常在廟口玩什麼？","廟東有沒有您一定會吃的攤子？"],deep:["您覺得一間廟對一個地方的人來說，代表什麼？","您結婚時最難忘的一件事是什麼？"]},
+props:["廟東小吃的照片","一盒喜餅或糕餅的照片"],
+words:[["菱角","lîng-kak","菱角"]],
+now:"慈濟宮與廟東小吃仍是豐原最熱鬧的地方，豐原糕餅業也持續經營。",care:"菱角酥、肉丸、肉粽較油且不易咀嚼，請先確認長輩的飲食狀況，可以用照片聊天。"},
+
+{id:"10",cat:"山城出遊",title:"東勢與東豐鐵馬道",sub:"客家山城、運木材的火車，和高接梨",from:1959,to:2000,place:"東勢、石岡、豐原",
+story:`晴：阿城伯，東勢是什麼樣的地方？
+城：東勢是客家庄，靠近山邊，大甲溪從旁邊流過。走在街上，常常聽到有人講客家話。過年過節還會做粄，家家戶戶都很熱鬧。
+晴：以前東勢為什麼那麼熱鬧？
+城：因為木材。山上有八仙山、大雪山這些林場，木材從山裡運出來，很多人靠林業過日子，街上有木材行、有工人，生意很好。
+晴：木材是怎麼運下山的？
+城：民國四十八年，從豐原到東勢的東勢線鐵路通車，就是為了運大雪山的木材，也順便載人。
+晴：所以以前可以坐火車去東勢？
+城：可以啊。學生坐火車上學，媽媽坐火車去豐原買東西，一節一節的車廂沿著山邊慢慢開。
+晴：那後來呢？
+城：林場不再砍樹，火車的生意越來越少，民國八十年就停駛了。
+晴：好可惜！
+城：不過鐵路沒有白費。民國八十九年改成東豐自行車綠廊，是台灣很早由舊鐵道改建的自行車道，假日很多人去騎腳踏車。
+晴：去東勢還有什麼要吃的？
+城：吃梨子！東勢的高接梨很有名，把高山梨的梨穗接在平地的梨樹上，就能長出好吃的梨，是東勢人研究出來的。
+晴：各位朋友，下次可以問問長輩：「您坐過東勢線的火車，或騎過東豐綠廊嗎？」`,
+keys:["客家庄","東勢線","大雪山林場","八仙山","東豐綠廊","自行車道","高接梨"],
+senses:["山邊小火車的聲音","騎腳踏車時迎面的風","高接梨咬下去的清甜"],
+q:{warm:["您去過東勢嗎？","您喜歡吃梨子嗎？"],recall:["您坐過東勢線的火車嗎？","以前家裡或鄰居有人做林業、伐木嗎？","您騎過腳踏車去哪裡玩？"],deep:["您覺得一個老東西換個方式留下來，像鐵路變成自行車道，好不好？","您學過最需要耐心的一件事是什麼？"]},
+props:["東豐自行車綠廊的照片","一顆梨子（視飲食狀況）"],
+words:[],
+now:"東豐自行車綠廊仍是熱門的騎車路線，東勢高接梨是當地重要的農產。",care:"東勢一帶在921地震時受災嚴重，若長輩提起，安靜傾聽，不主動追問。"},
+
+{id:"11",cat:"山城出遊",title:"谷關溫泉與中橫公路",sub:"在山壁上開出來的路，和山上的溫泉與水果",from:1956,to:1999,place:"谷關、中橫公路、梨山",
+story:`晴：阿城伯，中部橫貫公路是什麼時候開的？
+城：民國四十五年開工，民國四十九年通車，也就是一九六〇年。從台中東勢一路翻過中央山脈到花蓮。
+晴：在那麼高的山上開路，一定很困難。
+城：非常困難。那時候沒有現在的大機器，很多是用炸藥、鐵鎚、圓鍬，一點一點在山壁上鑿出來。
+晴：是誰去開路的？
+城：人數最多的是退役的榮民，還有工程人員和各地來的工人。他們住在山上的工寮，一做就是好幾年，下雨、颱風、落石，都要咬著牙撐過去。
+晴：聽說開路的過程中，也有人犧牲了。
+城：有，有不少人沒能下山。走中橫的時候，看到那些山壁，要記得是很多人用生命開出來的。
+晴：中橫上有什麼好玩的地方？
+城：谷關泡溫泉啊。日本時代就發現了，那時候叫明治溫泉，戰後才改叫谷關。溫泉旁邊有吊橋、有溪水，泡完全身暖呼呼的。
+晴：泡完溫泉呢？
+城：再往山上走，就是梨山。梨山的蘋果、水蜜桃、高山梨都很有名，以前買一顆蘋果送人是很大的禮。
+晴：現在還能一路開到梨山嗎？
+城：九二一地震以後，谷關到德基那一段山崩得很嚴重，一般車輛就不能走了，只能繞其他路上去。
+晴：各位朋友，下次可以問問長輩：「您走過中橫公路嗎？在谷關泡過溫泉嗎？」`,
+keys:["中橫公路","榮民","開路","谷關","明治溫泉","梨山","蘋果","水蜜桃"],
+senses:["溫泉的熱氣和硫磺味","山路上的雲霧","梨山蘋果的香甜"],
+q:{warm:["您去過谷關泡溫泉嗎？","您喜歡吃蘋果還是水蜜桃？"],recall:["您走過中橫公路嗎？那時候坐什麼車去？","以前蘋果很貴，您記得第一次吃是什麼時候嗎？","您認識參與開路或在山上工作過的人嗎？"],deep:["您覺得什麼樣的辛苦，是值得的？","有沒有一條路、一段旅程，讓您一輩子記得？"]},
+props:["中橫公路的老照片","一顆蘋果（視飲食狀況）","谷關溫泉或梨山果園的照片"],
+words:[["溫泉","un-tsuânn","溫泉"]],
+now:"谷關仍是知名溫泉區；台8線谷關至德基段自921地震後未對一般車輛開放，行政院已核定復建可行性研究、交通部規劃中，前往梨山需繞行其他路線。",care:"開路殉職與921地震都是沉重話題。長輩若是榮民或有親友參與開路、受災，請安靜傾聽，不主動追問。泡溫泉要留意血壓與心臟狀況。"},
+
+{id:"12",cat:"時代記憶",title:"霧峰：林家花園與省議會",sub:"大戶人家的老宅，和開會開了四十年的議事堂",from:1958,to:1998,place:"霧峰林家宮保第、台灣省議會",
+story:`晴：阿城伯，霧峰林家是很有名的家族嗎？
+城：很有名，清朝的時候就是中部的大戶人家。有人出來當武官，帶兵打仗，家族越來越興旺，在霧峰蓋了很多大房子。
+晴：林家的房子是什麼樣子？
+城：分成頂厝、下厝。下厝有宮保第，是一進又一進的大宅院；頂厝那邊有景薰樓，還有一座花園叫萊園。
+晴：萊園這個名字好特別。
+城：是取老萊子彩衣娛親的故事，意思是蓋花園讓長輩開心，是講孝順的。
+晴：這些老房子現在還在嗎？
+城：九二一地震的時候倒得很嚴重，後來花了很多年慢慢修回來，現在可以去參觀，走進去還能看到雕花的門窗和戲台。
+晴：霧峰還有一個台灣省議會對不對？
+城：對。民國四十七年，省議會搬到霧峰，一直到民國八十七年精省，在霧峰開會開了四十年。
+晴：省議會是在做什麼？
+城：省議員在那裡開會，討論全省的大小事情，像修路、蓋學校、農田水利，議員還會質詢官員。收音機、電視新聞常常播議會開會的消息。
+晴：那棟大樓長什麼樣子？
+城：圓圓的屋頂、很大的議事堂，一排一排的座位。以前很多學校帶學生去參觀，說那是民主殿堂。
+晴：各位朋友，下次可以問問長輩：「您去過霧峰林家或省議會參觀嗎？那時候是誰帶您去的？」`,
+keys:["霧峰林家","宮保第","頂厝下厝","萊園","台灣省議會","議事堂","精省"],
+senses:["老宅院裡的木頭香","議事堂裡迴盪的說話聲","大宅一進一進的門"],
+q:{warm:["您去過霧峰嗎？","您參觀過古厝嗎？"],recall:["您小時候有沒有去參觀過省議會？","您住過三合院或大宅院嗎？","家裡有沒有一間大家都會聚在一起的老房子？"],deep:["您覺得一個家族要怎麼樣才能一直和樂？","您最想對孩子說的一句做人道理是什麼？"]},
+props:["霧峰林家宮保第的照片","省議會議事堂的照片"],
+words:[],
+now:"霧峰林家宮保第園區開放參觀；原省議會議事大樓由立法院管理，議事堂已改設「民主時刻館」開放參觀。",care:"不評論政治人物；921地震若長輩主動提起，請安靜傾聽，不主動追問。"},
+
+{id:"13",cat:"眷村族群",title:"審計新村與彩虹眷村",sub:"公務員宿舍變文創，老兵爺爺畫出彩虹",from:1969,to:2024,place:"台中西區審計新村、南屯彩虹眷村",
+story:`晴：阿城伯，審計新村現在是年輕人很愛去的地方，以前是做什麼的？
+城：以前是宿舍。民國五十八年，台灣省政府在那裡蓋了員工宿舍，主要給審計處的公務員一家人住。
+晴：那時候住在那裡是什麼感覺？
+城：一排一排的房子，前面有小院子。孩子在巷子裡玩，媽媽們隔著牆聊天，誰家煮什麼菜都聞得到。
+晴：後來怎麼變成文創聚落的？
+城：精省以後，宿舍慢慢空下來，荒廢了好幾年。後來市政府整修，讓年輕人進去開店、擺市集，才又熱鬧起來。
+晴：那彩虹眷村呢？
+城：彩虹眷村在南屯，原本是一個軍人眷村。那裡住著一位老兵，大家叫他彩虹爺爺，名字叫黃永阜。
+晴：他為什麼開始畫畫？
+城：眷村要拆了，鄰居一戶一戶搬走，他一個人覺得寂寞，八十幾歲開始拿起油漆在牆上畫人物、動物和花。
+晴：然後呢？
+城：大學生看到了，在網路上分享，很多人來看、來連署，政府就把那一區留了下來，變成觀光景點。
+晴：眷村還有什麼讓人懷念的？
+城：眷村菜啊！紅燒肉、餃子、牛肉麵，還有各省的口音。山東的、四川的、湖南的，鄰居講話腔調都不一樣，聽久了也會跟著學。
+晴：各位朋友，下次可以問問長輩：「您住過或去過眷村嗎？記得哪一道眷村菜？」`,
+keys:["審計新村","公務員宿舍","彩虹眷村","彩虹爺爺","眷村菜","各省口音","市集"],
+senses:["彩虹眷村鮮艷的色彩","眷村廚房的紅燒肉香","鄰居各省口音的聊天聲"],
+q:{warm:["您去過彩虹眷村或審計新村嗎？","您喜歡吃餃子嗎？"],recall:["您住過宿舍或眷村嗎？鄰居是什麼樣的人？","您記得哪一道眷村菜或家鄉菜？","您學過別的省份的口音或方言嗎？"],deep:["一個人寂寞的時候，做什麼事可以讓心裡好過一點？","您覺得到了晚年，還可以開始學什麼新東西？"]},
+props:["彩虹眷村彩繪的照片","審計新村的照片","〈綠島小夜曲〉"],
+words:[],
+now:"審計新村是台中熱門的文創聚落；彩虹爺爺黃永阜於2024年1月過世，享壽101歲；彩虹眷村由市府維護，部分牆面經補繪後仍開放參觀。",care:"眷村與離鄉的話題可能引起思念家人、故鄉的情緒，若長輩是外省老兵或眷屬，請尊重、慢慢聽，不追問往事。"},
+
+{id:"14",cat:"山城出遊",title:"新社花海與香菇",sub:"河階台地上的香菇寮，和秋冬一大片花田",from:1970,to:2010,place:"新社、大甲溪河階台地",
+story:`晴：阿城伯，新社在台中的山邊，以前那裡是做什麼的？
+城：新社在大甲溪旁邊，地是一層一層的河階台地。早年種水果、種蔬菜，椪柑、葡萄、梨子都有。
+晴：我聽說新社的香菇很有名？
+城：很有名喔。差不多民國六十年代以後，大家開始用「太空包」種香菇，新社的人一家一家蓋起香菇寮。
+晴：太空包是什麼？
+城：就是把木屑裝進塑膠袋裡，壓緊、高溫殺菌，再把菌種放進去。以前要用整段木頭種，太空包方便多了，香菇長得也比較多。
+晴：香菇寮裡面是什麼樣子？
+城：暗暗的、濕濕的，一排一排架子堆滿太空包。香菇冒出來的時候，整間都是那個香味。
+晴：現在新社的香菇還多嗎？
+城：還是全台灣最大的產地，有人說占全國一半以上。去新社，街上到處在賣香菇、香菇餅、香菇肉羹。
+晴：那新社花海是怎麼來的？
+城：那裡有一個種苗改良繁殖場，休耕的田本來種花當綠肥，花開得滿山滿谷，大家就跑來看。民國九十四年底第一次開放，後來每年都辦花海。
+晴：後來越辦越大？
+城：民國九十九年台中縣市合併以後，跟市區的花毯節併在一起，每年秋冬在新社辦，假日車子塞到山下。
+晴：各位朋友，下次可以問問長輩：「您去新社看過花海嗎？有沒有順便買一包香菇回家？」`,
+keys:["河階台地","太空包","香菇寮","香菇肉羹","種苗場","新社花海","花毯節"],
+senses:["香菇寮裡潮濕的菇香","滿田的波斯菊和向日葵","假日山路上的車陣"],
+q:{warm:["您喜歡吃香菇嗎？","您去新社看過花海嗎？"],recall:["以前家裡煮香菇都怎麼煮？","您有沒有看過人家種香菇、採香菇？","去新社都走哪一條路？要開多久？"],deep:["您覺得哪一種花最像您自己？","有沒有一個地方，是您每年都想回去看一次的？"]},
+props:["一朵乾香菇（讓長輩聞聞看）","新社花海的照片"],
+words:[["香菇","hiunn-koo","香菇"]],
+now:"新社仍是全台主要香菇產區；台中國際花毯節每年秋冬在新社舉辦。",care:"若長輩有痛風或腎臟方面的飲食限制，香菇的話題以聊天、聞香為主，不必鼓勵多吃。"},
+
+{id:"15",cat:"山城出遊",title:"大坑與太平",sub:"假日爬步道，下山買一袋枇杷",from:1976,to:2010,place:"北屯大坑風景區、太平頭汴坑",
+story:`晴：阿城伯，台中人假日爬山，很多人說去大坑。大坑是什麼時候變成風景區的？
+城：民國六十五年前後，台中市政府把那一帶劃成大坑風景區。後來一條一條開步道，最早的一到五號步道，民國七十年就做好了。
+晴：步道還有編號喔？
+城：對啊，大家見面就問「今天走幾號？」有的是木頭階梯，有的是石頭路，爬到一身汗。
+晴：最高可以爬到哪裡？
+城：頭嵙山，八百多公尺，是舊台中市最高的地方。站在上面往西看，整個台中盆地和大肚山都看得到。
+晴：爬完山呢？
+城：下山吃土雞、喝山泉水泡的茶。九二一地震以後，那裡還找到了溫泉，現在去大坑還可以泡湯。
+晴：大坑隔壁就是太平嗎？
+城：對，翻過山就是太平。太平的頭汴坑種枇杷種得很早，聽說民國四十年代就在那裡種成功了。
+晴：枇杷什麼時候吃？
+城：差不多過完年到春天，三月最多。果農怕鳥吃、怕曬到，一顆一顆用紙袋套起來，很費工。
+晴：太平還有什麼水果？
+城：荔枝、龍眼也很多。夏天荔枝紅了，路邊都有人擺攤在賣。
+晴：那時候假日爬山，都是跟誰去？
+城：跟鄰居、跟公司同事，也有一家大小一起去。一大早出門，水壺、毛巾、饅頭帶著，爬到半山腰就坐下來聊天。
+晴：各位朋友，下次可以問問長輩：「您假日都去哪裡爬山？爬完山最想吃什麼？」`,
+keys:["大坑風景區","幾號步道","頭嵙山","土雞城","大坑溫泉","頭汴坑","枇杷","荔枝"],
+senses:["步道上的蟬聲和喘氣聲","枇杷的酸甜","山上泡溫泉的熱氣"],
+q:{warm:["您爬過大坑的步道嗎？","您喜歡吃枇杷還是荔枝？"],recall:["以前假日都跟誰一起去爬山？","爬完山都去哪裡吃飯？","您有沒有看過果農套紙袋？"],deep:["您覺得爬山最大的收穫是什麼？","年紀大了以後，您最想念哪一種年輕時的運動？"]},
+props:["枇杷或荔枝的照片","大坑步道的照片"],
+words:[["枇杷","pî-pê","枇杷"],["溫泉","un-tsuânn","溫泉"]],
+now:"大坑風景區有十多條登山步道與溫泉；太平每年春天舉辦枇杷相關活動。",care:"若長輩行動不便、已不能爬山，可以多聊「當年」的回憶，避免強調現在做不到。"},
+
+{id:"16",cat:"產業手藝",title:"后里的馬與薩克斯風",sub:"馬場裡的馬蹄聲，和小鎮裡的樂器聲",from:1912,to:2000,place:"后里馬場、后里、月眉糖廠",
+story:`晴：阿城伯，后里有一座馬場，台灣很少看到馬，那裡為什麼會有？
+城：日本時代就有了。差不多民國初年那時候蓋了馬廄，後來變成養馬、配種的地方，養的是軍隊要用的馬。
+晴：戰後呢？
+城：民國四十一年，國軍接手，繼續在那裡養馬。後來交給台中縣政府，變成大家可以去看馬、騎馬的地方。
+晴：小時候去馬場都做什麼？
+城：看馬啊。馬很高大，走過來的時候，馬蹄踩在地上「咯、咯」響，小孩子又怕又想摸。
+晴：后里還有一樣很有名的，是樂器？
+城：薩克斯風。后里有一位張連昌先生，聽說樂團的薩克斯風燒壞了，他把它拆開，一個零件一個零件研究，自己做出來。
+晴：好厲害，靠自己摸出來的。
+城：是啊。後來他的徒弟、親戚一個一個出來開店，后里就變成做薩克斯風的地方。有人說，台灣的薩克斯風大部分是后里做的。
+晴：走在后里會聽到樂器聲嗎？
+城：會喔，工廠裡試音，「嗚——」一聲傳出來。那時候很多人家裡就是工廠。
+晴：后里還有糖廠？
+城：月眉糖廠，日本時代就有了。民國八十八年不做糖了，變成觀光糖廠，夏天大家去吃冰棒、吃冰淇淋。
+晴：各位朋友，下次可以問問長輩：「您摸過馬、騎過馬嗎？會不會吹一種樂器？」`,
+keys:["后里馬場","軍馬","馬蹄聲","張連昌","薩克斯風","月眉糖廠","糖廠冰棒"],
+senses:["馬蹄踩地的聲音","工廠裡試吹的樂器聲","糖廠冰棒的甜味"],
+q:{warm:["您騎過馬嗎？","您喜歡聽薩克斯風嗎？"],recall:["小時候吃過哪一家糖廠的冰？","您會吹或彈哪一種樂器？","您認識做樂器的人嗎？"],deep:["您有沒有一樣本事，是自己摸索學會的？","如果可以學一種新樂器，您想學什麼？"]},
+props:["一段薩克斯風演奏的老歌，例如〈月亮代表我的心〉","糖廠冰棒的照片"],
+words:[],
+now:"后里馬場為台中市定古蹟並轉型為森林園區；后里設有薩克斯風博物館，月眉糖廠以觀光糖廠營運。",care:"冰品話題留意糖尿病與吞嚥狀況，以聊天為主。"},
+
+{id:"17",cat:"產業手藝",title:"大雅小麥與台中的米",sub:"冬天的稻田休息了，換小麥長出來",from:1950,to:2010,place:"大雅、台中各地的稻田",
+story:`晴：阿城伯，台灣種小麥的地方很少，大雅是其中一個？
+城：對，大雅是台灣種小麥最有名的地方，大家叫它「小麥的故鄉」。
+晴：小麥什麼時候種？
+城：冬天。一年兩季的稻子收完了，田空下來，就種小麥。過完年，春天三月就可以收了。
+晴：麥田看起來是什麼樣子？
+城：剛長的時候綠綠的，快收的時候變成金黃色，風一吹，整片麥穗在搖，跟稻田不一樣。
+晴：大雅的小麥都拿去做什麼？
+城：以前很多是拿去給公賣局釀酒。現在也有人拿來做麵包、做麵條。
+晴：大雅還有小麥文化節？
+城：差不多民國九十三年前後開始辦的。三月小麥熟的時候，有割麥、做麥草的活動，很多人帶小孩去。
+晴：那台中的稻子呢？
+城：以前台中到處是稻田。一年兩季，插秧的時候大家彎著腰在田裡，收割的時候全家都下去幫忙。
+晴：收割完要做什麼？
+城：曬穀子啊。在曬穀場、在馬路邊把穀子攤開，用耙子推來推去，下雨就趕快收，全村一起搶收。
+晴：割稻的時候，中午都吃什麼？
+城：家裡的女人煮好飯菜挑到田邊，大家坐在田埂上吃點心。那個時候吃什麼都香，因為真的餓了。
+晴：各位朋友，下次可以問問長輩：「您小時候有沒有下田插秧、割稻、曬穀子？」`,
+keys:["大雅小麥","麥穗","公賣局","小麥文化節","兩季稻","插秧","曬穀場"],
+senses:["金黃麥穗被風吹動的聲音","曬穀場上穀子的味道","剛煮好的新米飯香"],
+q:{warm:["您喜歡吃饅頭還是米飯？","您看過金黃色的麥田嗎？"],recall:["您小時候家裡有種田嗎？","割稻的時候，大家中午都吃什麼？","下雨搶收穀子是什麼樣子？"],deep:["您覺得以前種田的日子，最辛苦也最快樂的是什麼？","吃飯的時候，您會想起誰教您要珍惜米飯？"]},
+props:["一小把小麥穗或稻穗","一碗白米（讓長輩摸摸看）"],
+words:[["麥仔","be̍h-á","小麥、麥子"]],
+now:"大雅仍是台灣小麥主要產地，每年春天舉辦小麥文化節。",care:""},
+
+{id:"18",cat:"眷村族群",title:"清泉崗與大肚山",sub:"紅土台地上的飛機場，和那些年的美式生活",from:1936,to:1979,place:"清泉崗、大肚山台地、沙鹿、台中市區",
+story:`晴：阿城伯，台中有一個清泉崗機場，它是什麼時候有的？
+城：日本時代就有了，那時候叫公館機場。民國五十五年改名叫清泉崗，紀念一位叫邱清泉的將軍。
+晴：機場在大肚山上嗎？
+城：對，大肚山是一片紅土台地。下雨的時候，土是紅的，鞋子、褲管都沾得紅紅的。
+晴：我聽說以前那裡有美國軍人？
+城：有。民國五十幾年越戰的時候，美軍在清泉崗駐防，人最多的時候有好幾千人，一直到民國六十八年才全部離開。
+晴：那時候台中人看得到美國人嗎？
+城：看得到喔。他們放假會坐車進市區，市區也有做美軍生意的酒吧、餐廳。小孩子看到高高的阿兜仔，都會跟在後面看。
+晴：那時候有什麼美式的東西？
+城：可口可樂、口香糖、罐頭、舊的唱片。有人在美軍那裡工作，回家就帶這些新奇的東西。
+晴：大肚山上也有眷村？
+城：有啊，軍人和家屬住在山上的眷村，像忠義村。家家戶戶從大江南北來，過年的時候，包餃子、做臘肉，味道都不一樣。
+晴：眷村裡的生活是什麼樣子？
+城：房子小小的、巷子窄窄的，大家門對門。誰家煮什麼菜，整條巷子都聞得到。
+晴：各位朋友，下次可以問問長輩：「您第一次喝可口可樂，是在什麼時候？」`,
+keys:["公館機場","清泉崗","紅土台地","越戰時期","美軍","眷村","忠義村"],
+senses:["飛機起降的轟隆聲","紅土的味道","眷村巷子裡的飯菜香"],
+q:{warm:["您第一次喝可口可樂是什麼時候？","您去過大肚山嗎？"],recall:["小時候看過外國人嗎？是在哪裡？","眷村裡過年都吃什麼？","以前家裡有什麼美國來的東西？"],deep:["您覺得哪一個地方最像您的故鄉？","從別的地方搬來，最難適應的是什麼？最後是怎麼習慣的？"]},
+props:["可口可樂玻璃瓶的照片","眷村巷弄的老照片"],
+words:[["眷村","kuàn-tshun","眷村"]],
+now:"清泉崗為空軍基地，西南角為台中國際機場（清泉崗機場）民航區；大肚山上的忠義社區（忠義村）仍保有眷村的樣貌。",care:"眷村長輩可能有隨軍來台、與家鄉親人分離的經驗，若談到故鄉，跟著長輩的情緒走，不追問。"},
+
+{id:"19",cat:"產業手藝",title:"黑手的城市：工具機與工業區",sub:"滿手機油的學徒，做出全世界的機器",from:1966,to:2000,place:"台中工業區、潭子加工出口區、大里、太平",
+story:`晴：阿城伯，常聽人說台中是「黑手」的城市，這是什麼意思？
+城：黑手就是修機器、做機械的師傅。整天摸機油、摸鐵屑，手洗不乾淨，黑黑的，所以叫黑手。
+晴：台中的工廠多嗎？
+城：多喔。民國六十年前後，潭子開了加工出口區，後來西屯那邊又開了台中工業區，工廠一間一間蓋起來。
+晴：都做些什麼？
+城：做機器、做工具機、做腳踏車零件、做螺絲。大里、太平、潭子，很多是家庭工廠，一樓做工、樓上住人。
+晴：工具機是什麼？
+城：就是做機器的機器，車床、銑床、磨床。把一塊鐵車成零件，要很準，差一點點都不行。
+晴：那時候年輕人怎麼學這門手藝？
+城：當學徒啊。國小、國中畢業就跟師傅，先掃地、搬東西、遞工具，看師傅怎麼做，慢慢才讓你摸機器。
+晴：當學徒辛苦嗎？
+城：很辛苦。薪水少，有時候還被罵。可是學三年四個月出師，就有一技在身，很多人後來自己開工廠當老闆。
+晴：所以台中的機械很有名？
+城：現在全世界很多工廠用的工具機、腳踏車，都是台中做的。都是那些黑手一點一點打拚出來的。
+晴：各位朋友，下次可以問問長輩：「您年輕時當過學徒嗎？師傅教您的第一件事是什麼？」`,
+keys:["黑手","加工出口區","台中工業區","工具機","車床","家庭工廠","學徒","三年四個月"],
+senses:["車床轉動的嗡嗡聲","機油和鐵屑的味道","洗不掉的黑指甲"],
+q:{warm:["您會修東西嗎？","您家附近以前有工廠嗎？"],recall:["您第一份工作是做什麼？","當學徒的時候，一天怎麼過？","師傅對您嚴不嚴格？"],deep:["您覺得自己最驕傲的一門手藝是什麼？","您會想對現在的年輕人說什麼？"]},
+props:["一把老扳手或螺絲起子","工廠車床的老照片"],
+words:[["烏手","oo-tshiú","黑手、機械工人"],["師仔","sai-á","學徒"]],
+now:"台中是台灣精密機械與工具機的重要產業聚落，潭子的加工出口區已於二〇二一年改名為臺中科技產業園區。",care:"若長輩曾在工廠受傷或有職業傷害，避免追問細節，多肯定他的手藝與付出。"},
+
+{id:"20",cat:"生活日常",title:"一中街與學生時代",sub:"踩著腳踏車上學，放學去一中街吃點心",from:1915,to:2000,place:"台中一中、一中街、北區",
+story:`晴：阿城伯，台中一中是一所很老的學校吧？
+城：很老喔，日本時代民國四年，也就是一九一五年就成立了。
+晴：聽說它是台灣人自己出錢蓋的？
+城：對。那時候台灣人想讀中學很難，林獻堂、林烈堂、辜顯榮這些仕紳出錢蓋校舍，讓台灣的孩子有中學可以讀。
+晴：好有意義的一間學校。
+城：所以很多老一輩說，這是為台灣人辦的學校。
+晴：學校旁邊的一中街呢？
+城：學生多，附近就有人做吃的。放學一到，整條街都是穿制服的學生，買炸物、買冰、買飲料。
+晴：那時候學生都怎麼上學？
+城：騎腳踏車啊。早上一大群學生踩著腳踏車，書包掛在後座，鈴鐺「叮叮」響，一路騎到學校。
+晴：放學後還要去補習嗎？
+城：很多人要。台中的補習班很多，晚上補完習，跟同學去吃一碗麵、喝一杯飲料，才甘願回家。
+晴：您那時候最喜歡哪一科？
+城：哈哈，最喜歡的是下課。跟同學在操場打球，打到天黑才回家，回去被罵。
+晴：那時候的同學，現在還有聯絡嗎？
+城：有幾個還有。每隔幾年辦一次同學會，見面還是叫對方的綽號，一講起以前的事，笑到停不下來。
+晴：各位朋友，下次可以問問長輩：「您讀書的時候怎麼上學？放學最喜歡去哪裡？」`,
+keys:["台中一中","創校仕紳","一中街","炸物","腳踏車上學","補習班","制服"],
+senses:["腳踏車鈴鐺聲","炸物的油香","放學鐘聲"],
+q:{warm:["您以前怎麼上學？","您讀書時最喜歡哪一科？"],recall:["您讀的是哪一間學校？","放學以後都跟同學去哪裡？","您有沒有補過習？"],deep:["學生時代最難忘的一位老師或同學是誰？","如果可以回到學生時代，您想做什麼？"]},
+props:["老的畢業紀念冊或制服照片","腳踏車鈴鐺"],
+words:[["跤踏車","kha-ta̍h-tshia","腳踏車"]],
+now:"台中一中仍是台中的老牌學校，一中街是學生與觀光客常去的商圈。",care:"若長輩小時候因家境沒有機會讀書，可以改聊「小時候在做什麼工作」，不要讓他覺得被比較。"},
+
+{id:"21",cat:"生活日常",title:"泡沫紅茶與珍珠奶茶",sub:"搖一搖就起泡的紅茶，和一顆顆珍珠",from:1983,to:2000,place:"台中市區的泡沫紅茶店",
+story:`晴：阿城伯，以前喝茶是在家裡泡，什麼時候開始有泡沫紅茶店？
+城：民國七十幾年。台中開了很多泡沫紅茶店，坐下來點一杯冰紅茶，可以坐一整個下午。
+晴：泡沫紅茶為什麼叫泡沫？
+城：店員把紅茶、糖、冰塊放進搖杯裡，用力搖、搖、搖，倒出來上面就有一層泡沫。
+晴：我聽說這個搖的方法也有故事？
+城：春水堂的劉漢介先生說，他在日本看到人家搖咖啡，就想茶是不是也可以搖。他的第一家店是民國七十二年在台中四維街開的。
+晴：那珍珠奶茶呢？
+城：珍珠奶茶是台灣人發明的。台中的春水堂、台南的翰林茶館，都說是自己先做出來的，各有各的故事。
+晴：那到底是誰先？
+城：這個喔，大家說法不一樣，我們就不幫他們判了。反正是台灣人想出來的，現在全世界都在喝。
+晴：以前在茶店裡都做什麼？
+城：聊天、下象棋、打牌、看報紙。學生就在那裡寫功課、讀書，一杯紅茶喝到冰塊都化了。
+晴：好像現在的咖啡廳。
+城：差不多啦。那時候年輕人約會、朋友聚會，都說「去喝茶」。
+晴：那家裡的老人家，喝不喝這種冰的紅茶？
+城：老一輩還是喜歡在家裡泡熱茶，一壺茶、幾個小杯子，邊喝邊聊。冰的紅茶是年輕人的。
+晴：各位朋友，下次可以問問長輩：「您第一次喝珍珠奶茶是什麼時候？覺得好喝嗎？」`,
+keys:["泡沫紅茶","搖杯","春水堂","四維街","珍珠奶茶","下象棋","去喝茶"],
+senses:["搖杯裡冰塊的聲音","紅茶的香氣","珍珠Q彈的口感"],
+q:{warm:["您喜歡喝甜的還是不甜的茶？","您喝過珍珠奶茶嗎？"],recall:["以前跟朋友聚會都去哪裡？","您在茶店裡下過棋嗎？","年輕時約會都去哪裡？"],deep:["您覺得以前的人跟現在的人，聚在一起的方式有什麼不一樣？","有沒有一個老朋友，您很想再跟他喝一杯茶？"]},
+props:["一個搖杯或玻璃杯","一盤象棋"],
+words:[["泡茶","phàu tê","泡茶"]],
+now:"台中仍有許多老牌茶館，珍珠奶茶已成為台灣代表性的飲料。",care:"珍珠需要咀嚼、容易噎到，有吞嚥困難的長輩不要真的給珍珠，以聊天為主；糖尿病長輩留意含糖飲料。"},
+
+{id:"22",cat:"生活日常",title:"逢甲夜市與東海夜市",sub:"學生的宵夜，變成觀光客的美食街",from:1963,to:2010,place:"西屯逢甲商圈、龍井東海別墅",
+story:`晴：阿城伯，逢甲夜市是台中最有名的夜市，它是怎麼開始的？
+城：民國五十二年，逢甲搬到西屯那裡，幾千個學生住在附近，要吃宵夜、要買東西，攤販就一攤一攤來了。
+晴：所以一開始是做學生的生意？
+城：對啊，學生肚子餓得快。後來越來越大，文華路、福星路兩邊都是攤子，假日人擠人。
+晴：逢甲夜市有什麼特別的吃的？
+城：很多新奇的東西，大腸包小腸、各種炸的、烤的，每年都有新花樣。哪一攤排最長，大家就去排。
+晴：那東海夜市呢？
+城：東海大學在大肚山上，學校旁邊有一區叫東海別墅，學生住在那裡，晚上也有夜市。
+晴：東海夜市跟逢甲有什麼不一樣？
+城：東海比較小，比較像學生自己的地方。便宜的便當、滷味、豆花，宵夜吃一攤又一攤。
+晴：您以前去夜市都做什麼？
+城：吃東西、套圈圈、打彈珠、撈金魚。逛一圈下來，手上一定提滿滿。
+晴：現在夜市還是那麼多人嗎？
+城：還是很多，現在還有很多外國觀光客，講各種話的都有。
+晴：您以前有沒有在夜市擺過攤，或認識擺攤的人？
+城：有認識啊。擺攤很辛苦，下午就要備料，半夜收攤回家還要洗東西，賺的都是辛苦錢。
+晴：各位朋友，下次可以問問長輩：「您最喜歡逛哪一個夜市？去夜市一定要吃什麼？」`,
+keys:["逢甲夜市","文華路","大腸包小腸","東海別墅","學生宵夜","套圈圈","撈金魚"],
+senses:["攤販的叫賣聲","烤香腸的煙味","人擠人的熱氣"],
+q:{warm:["您喜歡逛夜市嗎？","去夜市一定要吃什麼？"],recall:["以前常去哪一個夜市？跟誰去？","您在夜市玩過什麼遊戲？","您記得第一次吃到的新奇小吃嗎？"],deep:["您覺得熱鬧的地方跟安靜的地方，哪一種讓您比較自在？","年輕時跟朋友吃宵夜，最常聊什麼？"]},
+props:["夜市攤販的照片","一盒彈珠或套圈圈的小圈圈"],
+words:[["夜市","iā-tshī","夜市"]],
+now:"逢甲夜市是全台知名的觀光夜市，東海夜市（東海別墅商圈）仍以學生客為主。",care:"夜市小吃多油炸、口味重，留意長輩的飲食限制與吞嚥狀況。"},
+
+{id:"23",cat:"時代記憶",title:"九二一大地震",sub:"那一夜的搖晃，和之後一起站起來的日子",from:1999,to:2007,place:"霧峰、石岡、東勢、台中各地",
+story:`晴：各位朋友，這一集談九二一地震，對很多台中人來說是很沉重的記憶，我們慢慢說。阿城伯，那天晚上您記得嗎？
+城：記得。民國八十八年九月二十一日，凌晨一點多，大家都在睡覺，突然整間房子上下左右一直搖。
+晴：那時候是什麼感覺？
+城：很可怕，東西一直掉，燈一下子全暗了。大家摸黑跑到外面，穿著睡衣、光著腳站在路上。
+晴：天亮以後呢？
+城：停電、停水，電話也打不通。大家先找家人、找鄰居，看大家有沒有平安。
+晴：台中哪些地方比較嚴重？
+城：霧峰、東勢、石岡、大坑都很嚴重。霧峰的光復國中，斷層從操場底下通過，地面整個隆起來。
+晴：我聽說石岡壩也壞了？
+城：斷層剛好經過石岡壩，壩被抬高、斷開，台中的用水也受到影響。
+晴：那段時間大家住在哪裡？
+城：很多人不敢進屋子，在學校操場、空地搭帳篷睡。後來才有組合屋。
+晴：那時候大家怎麼互相幫忙？
+城：鄰居一起煮大鍋飯，各地來的救難隊、志工、阿兵哥來幫忙，送水、送便當、送棉被。大家互相照顧，慢慢重建起來。
+晴：現在那些地方呢？
+城：光復國中變成九二一地震教育園區，石岡壩也留下一段斷掉的地方，讓大家記得那一天。
+晴：各位朋友，這個話題請不要主動開啟。如果長輩自己提起，我們安靜地聽，說一句：「那時候大家真的很不容易。」`,
+keys:["民國八十八年","凌晨的搖晃","停電停水","車籠埔斷層","睡帳篷","組合屋","鄰里互助","重建"],
+senses:["黑暗中的搖晃和東西掉落的聲音","帳篷外的夜風","大鍋飯的熱氣"],
+q:{warm:["（長輩主動提起時）那時候您住在哪裡？","那段時間，有誰來幫忙您？"],recall:["（長輩主動提起時）停電的那幾天，大家怎麼過？","鄰居之間是怎麼互相照顧的？","您記得後來重建的過程嗎？"],deep:["那段日子，讓您最感謝的人是誰？","經歷過那一次，您覺得生命中最重要的是什麼？"]},
+props:["（視長輩狀況）九二一地震教育園區的照片","（不建議主動拿出災情照片）"],
+words:[["地動","tē-tāng","地震"]],
+now:"霧峰九二一地震教育園區保存光復國中的斷層與校舍遺跡；石岡壩保留部分震損壩體作為紀念。",care:"高敏感話題。九二一可能牽涉失去親人、失去家園，也可能勾起對地震的恐懼。不主動開啟、不追問傷亡與損失；長輩情緒激動或表示害怕時先停下來陪伴，可轉向「大家互相幫忙」的部分；必要時告知督導。遇到地震演練、新聞報導時也要留意長輩的反應。"},
+
+{id:"24",cat:"生活日常",title:"精明一街與美術館綠園道",sub:"露天咖啡座、綠園道，和慢慢走的午後",from:1988,to:2010,place:"西區精明一街、國立台灣美術館、美術園道",
+story:`晴：阿城伯，台中有一條很有名的精明一街，那是什麼樣的地方？
+城：一條一百多公尺的小街，兩邊是咖啡店、服飾店、精品店，街上擺著露天的桌椅，很有歐洲的味道。
+晴：聽說那裡不能開車進去？
+城：對，民國八十一年，街上的住戶和店家自己商量好，把它變成徒步區。剛開始還有人把機車停進去，住戶就輪流在路口勸。
+晴：是大家自己辦起來的？
+城：是啊，很難得。後來大家說它是台灣早期的徒步區之一，很多人特地去那裡喝咖啡。
+晴：那附近的美術館呢？
+城：國立台灣美術館，民國七十七年開館，那時候叫台灣省立美術館。
+晴：美術館裡有什麼？
+城：有畫展、雕塑，外面的草地很大，還有很多雕像。假日帶小孩去，跑來跑去也不怕。
+晴：九二一地震的時候，美術館有受影響嗎？
+城：有，建築受損，關了好幾年整修，民國九十三年才重新開放。
+晴：美術館旁邊還有綠園道？
+城：一條長長的綠園道，兩邊是大樹。從科博館一路散步到美術館，路邊有咖啡店、餐廳，現在叫草悟道。
+晴：那時候去精明一街喝咖啡，是不是很時髦？
+城：很時髦喔。年輕人穿得漂漂亮亮，坐在外面喝一杯咖啡，看人來人往，覺得自己好像在國外。
+晴：各位朋友，下次可以問問長輩：「您喜歡去哪裡散步？最喜歡跟誰一起走？」`,
+keys:["精明一街","徒步區","露天咖啡座","國美館","省立美術館","綠園道","草悟道"],
+senses:["咖啡的香氣","綠園道上的樹蔭和風","美術館草地上的陽光"],
+q:{warm:["您喜歡喝咖啡嗎？","您去過美術館嗎？"],recall:["以前假日都去哪裡散步？","您看過什麼印象深刻的畫展嗎？","第一次喝咖啡是在哪裡？"],deep:["您覺得什麼樣的地方，讓人走起來最舒服？","如果可以畫一幅畫，您想畫什麼？"]},
+props:["一杯咖啡的香味（視飲食狀況）","國美館與綠園道的照片"],
+words:[["散步","sàn-pōo","散步"]],
+now:"國立台灣美術館免費參觀；精明一街仍是徒步商店街，周邊的草悟道串連科博館與國美館。",care:""},
+
+{id:"25",cat:"山城出遊",title:"高美濕地與海線",sub:"以前的海水浴場，變成看夕陽的濕地",from:1932,to:2010,place:"清水高美濕地、梧棲、大甲、大安",
+story:`晴：阿城伯，現在很多人去高美濕地看夕陽，那裡以前就是濕地嗎？
+城：不是喔。日本時代那裡是海水浴場，夏天很多人去游泳、玩水。
+晴：後來怎麼變成濕地的？
+城：民國六十幾年蓋了台中港，沙子慢慢堆積，海水浴場就淤起來了，大概民國六十五年關掉。沒想到後來變成一大片濕地。
+晴：濕地裡有什麼？
+城：螃蟹、彈塗魚、很多鳥。退潮的時候，灘地上一個一個小洞，螃蟹跑來跑去。
+晴：現在去高美濕地還能做什麼？
+城：走木棧道，看夕陽。海邊一排白色的大風車在轉，太陽掉下去的時候，水面像一面鏡子。
+晴：台中的「海線」是指哪裡？
+城：清水、梧棲、沙鹿、大甲、大安這一帶，靠海那邊。山那邊叫山線，靠海這邊叫海線。
+晴：海線的生活跟市區有什麼不一樣？
+城：風很大，冬天的海風吹得臉都痛。很多人討海、種田，梧棲有漁港，可以吃到新鮮的海產。
+晴：大甲也在海線？
+城：對，大甲有鎮瀾宮，每年媽祖出巡，很多人跟著走好幾天。大安海邊也有海水浴場。
+晴：以前去海邊玩水，大人會不會擔心？
+城：會啊，大人一直喊「不要跑太遠」。玩完水全身都是沙，回家還要沖好久，晚上睡覺都覺得在晃。
+晴：各位朋友，下次可以問問長輩：「您去海邊看過夕陽嗎？是跟誰一起去的？」`,
+keys:["高美海水浴場","高美濕地","台中港","木棧道","風車","夕陽","海線","大甲媽祖"],
+senses:["海線冬天的強風","濕地的鹹味","夕陽照在水面的金光"],
+q:{warm:["您喜歡看夕陽嗎？","您去過高美濕地嗎？"],recall:["小時候去海邊都做什麼？","您跟過媽祖遶境嗎？","海線冬天的風有多大？"],deep:["一個地方變了模樣，您會覺得可惜還是驚喜？","您看過最美的一次夕陽，是什麼時候？"]},
+props:["高美濕地夕陽的照片","一個小貝殼"],
+words:[["海墘","hái-kînn","海邊"]],
+now:"高美濕地是野生動物保護區與國家級濕地，有木棧道可近距離觀察；大甲媽祖遶境每年春天舉行。",care:"海邊意外的話題若長輩有親人溺水或海難的經驗，可能難過，留意反應。"},
+
+{id:"26",cat:"時代記憶",title:"從台中縣到大台中",sub:"縣市合在一起，城市越長越大",from:1980,to:2021,place:"原台中縣各鄉鎮市、台中市區、烏日高鐵站",
+story:`晴：阿城伯，我出生的時候已經叫台中市了。以前台中縣和台中市是分開的嗎？
+城：分開的。台中市是中間那一塊，台中縣圍在外面，有豐原、大甲、清水、霧峰這些鄉鎮市。
+晴：那時候住在縣裡跟住在市裡，有什麼不一樣？
+城：縣裡比較鄉下，稻田多、工廠多。要買東西、看病、看電影，就搭公車進市區。
+晴：什麼時候合在一起的？
+城：民國九十九年十二月二十五日，台中縣市合併，升格成直轄市。原來的鄉鎮市都改成區，加起來二十九個區。
+晴：改的時候大家習慣嗎？
+城：一開始寫地址常常寫錯，「縣」改成「市」、「鎮」改成「區」。到現在還是有老人家說「我住台中縣」。
+晴：台中以前被叫做「文化城」？
+城：對啊，很多人說台中是文化城，學校多、讀書人多，日本時代就有很多台灣的文化人在這裡活動。
+晴：交通也變了很多吧？
+城：民國九十六年高鐵通車，烏日有高鐵台中站，到台北一個多小時。民國一百一十年，捷運綠線也通車了，從北屯坐到高鐵站。
+晴：台中的人是不是也越來越多？
+城：越來越多。民國一百零六年，台中的人口超過高雄，變成全台灣第二多的城市。
+晴：各位朋友，下次可以問問長輩：「您在台中住多久了？以前住的地方，現在變成什麼樣子？」`,
+keys:["台中縣","縣市合併","升格直轄市","二十九區","文化城","高鐵台中站","捷運綠線"],
+senses:["鄉下稻田的味道","進城時公車搖晃的感覺","捷運進站的提醒聲"],
+q:{warm:["您在台中住多久了？","您坐過高鐵或捷運嗎？"],recall:["以前要進市區都怎麼去？","縣市合併的時候，您有什麼感覺？","您以前住的地方，附近有什麼？"],deep:["這幾十年的改變，您最喜歡哪一樣？最捨不得哪一樣？","您覺得台中哪一點最讓您有「家」的感覺？"]},
+props:["舊的台中縣地址信封或門牌照片","高鐵或捷運的照片"],
+words:[],
+now:"台中市設二十九區，人口已超過兩百八十七萬，是全台第二大城；捷運綠線串連北屯與高鐵台中站。",care:""}
+];
+
+/* ---------- helpers ---------- */
+const $ = s=>document.querySelector(s);
+const esc = s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const roc = y=>y===1912?`民國元年`:y>1911?`民國${y-1911}年`:`民前${1912-y}年`;
+const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+const state = {q:"",cat:"全部",birth:null};
+
+function parseYear(v){
+  const n = parseInt(String(v).replace(/[^\d]/g,""),10);
+  if(!n) return null;
+  if(n<200) return n+1911;          // 民國
+  if(n>1890 && n<2030) return n;    // 西元
+  return null;
+}
+function ageText(ep){
+  const b = state.birth; if(!b) return "";
+  const a1 = ep.from-b, a2 = ep.to-b;
+  if(a2<0) return "長輩出生前的事";
+  if(a1<0) return `長輩 0–${a2} 歲`;
+  return `長輩約 ${a1}–${a2} 歲`;
+}
+function minutes(ep){return Math.max(2,Math.round(ep.story.replace(/\s/g,"").length/230))}
+function matches(ep){
+  if(state.cat!=="全部" && ep.cat!==state.cat) return false;
+  if(!state.q) return true;
+  const hay = [ep.title,ep.sub,ep.place,ep.story,ep.keys.join(" "),ep.cat,ep.from,ep.to,roc(ep.from)].join(" ");
+  return state.q.split(/\s+/).every(t=>hay.includes(t));
+}
+
+/* ---------- chips ---------- */
+function renderChips(){
+  const all = ["全部",...CATS];
+  $("#chips").innerHTML = all.map(c=>{
+    const n = c==="全部"?EPISODES.length:EPISODES.filter(e=>e.cat===c).length;
+    return `<button class="chip" aria-pressed="${state.cat===c}" data-cat="${c}">${ico(c)}${c}<span class="n">${n}</span></button>`}).join("");
+}
+$("#chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;state.cat=b.dataset.cat;renderAll()});
+
+/* ---------- grid ---------- */
+function renderGrid(){
+  const list = EPISODES.filter(matches);
+  $("#count").textContent = `共 ${list.length} 集${state.cat!=="全部"?`・${state.cat}`:""}`;
+  if(!list.length){$("#grid").innerHTML=`<div class="empty">找不到符合的故事。換個關鍵字試試，例如「火車」「媽祖」「眷村」。</div>`;return}
+  $("#grid").innerHTML = list.map(ep=>`
+    <button class="ticket" data-id="${ep.id}" aria-label="第${+ep.id}集 ${esc(ep.title)}">
+      <div class="main">
+        <div class="cat">${ep.cat}</div>
+        <span class="badge">${ico(ep.cat)}</span>
+        <h3>${esc(ep.title)}</h3>
+        <div class="sub">${esc(ep.sub)}</div>
+        <div class="meta">
+          <span class="tag mono">${ep.from}–${ep.to}</span>
+          <span class="tag">${AUDIO.has(ep.id)?"錄音 ":"文字稿 "}約 ${minutes(ep)} 分鐘</span>
+          ${state.birth?`<span class="tag age">${ageText(ep)}</span>`:""}
+          ${ep.care && ep.cat==="時代記憶"?`<span class="tag care">需留意</span>`:""}
+        </div>
+      </div>
+      <div class="stub" aria-hidden="true"><span class="no mono">No.</span><span class="num">${ep.id}</span><span class="yr">${roc(ep.from).replace("民國","民")}</span></div>
+    </button>`).join("");
+}
+$("#grid").addEventListener("click",e=>{const t=e.target.closest(".ticket");if(t)openEp(t.dataset.id)});
+
+/* ---------- timeline ---------- */
+const T0=1900,T1=2010;
+const px = y=>((Math.min(Math.max(y,T0),T1)-T0)/(T1-T0)*100);
+function renderTimeline(){
+  const sorted=[...EPISODES].sort((a,b)=>a.from-b.from);
+  // greedy lane packing
+  const lanes=[];sorted.forEach(ep=>{let i=lanes.findIndex(end=>end<=ep.from-2);if(i<0){i=lanes.length;lanes.push(0)}lanes[i]=Math.max(ep.to,Math.max(ep.from,T0)+14);ep._lane=i});
+  let ticks="";for(let y=T0;y<=T1;y+=10){ticks+=`<div class="tick mono" style="left:${px(y)}%">${y}<br>${y>1911?"民"+(y-1911):"&nbsp;"}</div>`}
+  let ages="";
+  if(state.birth){for(let a=0;a<=100;a+=10){const y=state.birth+a;if(y>=T0&&y<=T1)ages+=`<div class="age" style="left:${px(y)}%">${a}歲</div>`}}
+  const life = state.birth?`<div class="tl-life" style="left:${px(state.birth)}%;right:0"></div>`:"";
+  const bars = sorted.map(ep=>`<button class="tl-bar${matches(ep)?"":" dim"}" data-id="${ep.id}" style="left:${px(ep.from)}%;width:max(${px(ep.to)-px(ep.from)}%,96px);top:${ep._lane*30}px" title="${esc(ep.title)} ${ep.from}–${ep.to}">${esc(ep.title)}</button>`).join("");
+  $("#tl").innerHTML = `<div class="tl-axis">${ticks}</div>${state.birth?`<div class="tl-age">${ages}</div>`:""}<div class="tl-rows" style="height:${lanes.length*30}px">${life}${bars}</div>`;
+  $("#tlnote").textContent = state.birth?`黃色虛線起點是長輩出生那年（${state.birth}，${roc(state.birth)}），上方標出每十歲的位置。`:"每一條代表一集故事發生的年代。填入長輩出生年後，會標出他們在那時幾歲。";
+}
+$("#tl").addEventListener("click",e=>{const b=e.target.closest(".tl-bar");if(b)openEp(b.dataset.id)});
+
+function renderAll(){renderChips();renderGrid();renderTimeline()}
+
+/* ---------- search & birth ---------- */
+$("#q").addEventListener("input",e=>{state.q=e.target.value.trim();renderGrid();renderTimeline()});
+$("#by").addEventListener("input",e=>{state.birth=parseYear(e.target.value);store.set("txg-birth",e.target.value);renderGrid();renderTimeline()});
+(()=>{const v=store.get("txg-birth");if(v){$("#by").value=v;state.birth=parseYear(v)}})();
+
+/* ---------- converter ---------- */
+function convert(){
+  const y=parseYear($("#cv").value); const out=$("#cvout");
+  if(!y){out.innerHTML="請輸入像 1963 或 52 這樣的年份。";return}
+  let s=`西元 <b>${y}</b> 年 ＝ <b>${roc(y)}</b>`;
+  if(y>=1895&&y<=1945){
+    let era = y<1912?`明治 <b>${y-1867}</b> 年`: y===1912?`明治 <b>45</b> 年／大正<b>元</b>年`: y<1926?`大正 <b>${y-1911}</b> 年`: y===1926?`大正 <b>15</b> 年／昭和<b>元</b>年`:`昭和 <b>${y-1925}</b> 年`;
+    s+=`<br>日本年號：${era}<br>當時台灣在日本統治時期${y===1945?"（到這一年十月）":""}`;
+  }
+  const now=new Date().getFullYear(); if(y<=now) s+=`<br>距今 <b>${now-y}</b> 年`;
+  if(state.birth && y>=state.birth) s+=`<br>那年長輩約 <b>${y-state.birth}</b> 歲`;
+  out.innerHTML=s;
+}
+$("#cv").addEventListener("input",convert);
+
+/* ---------- episode sheet ---------- */
+const dlg=$("#dlg");
+let cur=null;
+function openEp(id){
+  const ep=EPISODES.find(e=>e.id===id); if(!ep) return;
+  stopSpeech(); cur=ep;
+  let si=0;
+  const storyHTML = parseStory(ep.story).map(t=>`<div class="turn ${t.sp}"><div class="who ${t.sp}" aria-hidden="true">${HOST[t.sp].badge}</div><div class="bubble"><b class="name">${HOST[t.sp].name}</b>${t.text.split(/(?<=[。！？…][」』]?)(?![」』。！？…])/).filter(Boolean).map(s=>`<span class="s" data-sp="${t.sp}" data-i="${si++}">${esc(s)}</span>`).join("")}</div></div>`).join("");
+  const qg=(lv,hint,arr)=>`<div class="qgroup"><div class="lv">${lv}<small>${hint}</small></div><ul>${arr.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`;
+  $("#sheet").innerHTML = `
+    <div class="sheet-head">
+      <div>
+        <div class="cat">${ico(ep.cat)}第 ${+ep.id} 集・${ep.cat}</div>
+        <h2 id="dtitle">${esc(ep.title)}</h2>
+        <div class="sub">${esc(ep.sub)}</div>
+        <div class="meta">
+          <span class="tag mono">${ep.from}–${ep.to}（${roc(ep.from)}–${roc(ep.to).replace("民國","")}）</span>
+          <span class="tag">${esc(ep.place)}</span>
+          ${state.birth?`<span class="tag age">${ageText(ep)}</span>`:""}
+        </div>
+      </div>
+      <button class="x" id="close" aria-label="關閉">×</button>
+    </div>
+    <div class="sheet-body" id="sbody">
+      <div class="player">
+        <button class="play" id="play"><svg viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></svg><span>開始說書</span></button>
+        <input class="seek" id="seek" type="range" min="0" max="1000" value="0" aria-label="播放進度">
+        <span class="time mono" id="time">0:00</span>
+        <div class="rate" role="group" aria-label="語速">語速
+          <button data-r="0.85" aria-pressed="false">慢</button><button data-r="1" aria-pressed="true">中</button><button data-r="1.2" aria-pressed="false">快</button>
+        </div>
+        <div class="note" id="pnote">阿城伯與小晴的對談錄音。口語中會多一些「嗯、啊」，和下方文字稿略有不同。</div>
+        <audio id="aud" preload="none" ${AUDIO.has(ep.id)?`src="audio/ep${ep.id}.mp4"`:""}></audio>
+      </div>
+      <div class="hosts"><span><i class="who m" aria-hidden="true">城</i>阿城伯：在這裡住了一輩子，負責說故事</span><span><i class="who f" aria-hidden="true">晴</i>小晴：年輕主持人，負責發問</span></div>
+      <h4>對談文字稿</h4>
+      <div class="story" id="story">${storyHTML}</div>
+
+      <h4>聊天引子</h4>
+      <div class="qs">
+        ${qg("暖身","好回答，先讓長輩點頭",ep.q.warm)}
+        ${qg("回憶","開放式，請長輩多說一點",ep.q.recall)}
+        ${qg("延伸","談感受與人生，看長輩狀況再問",ep.q.deep)}
+      </div>
+
+      <h4>準備的材料</h4>
+      <div class="cols">
+        <div class="box"><b>記憶關鍵字</b>${ep.keys.map(k=>`<span class="tag" style="display:inline-block;margin:2px 4px 2px 0">${esc(k)}</span>`).join("")}</div>
+        <div class="box"><b>感官線索（聲音・味道・畫面）</b><ul>${ep.senses.map(s=>`<li>${esc(s)}</li>`).join("")}</ul></div>
+        <div class="box"><b>可以帶去的東西／歌曲</b><ul>${ep.props.map(s=>`<li>${esc(s)}</li>`).join("")}</ul></div>
+      </div>
+
+      ${ep.words.length?`<h4>台語提示</h4><div class="words">${ep.words.map(w=>`<div class="word">${esc(w[0])}<em>${esc(w[1])}</em><small>${esc(w[2])}</small></div>`).join("")}</div>`:""}
+
+      <h4>現在的樣子</h4>
+      <p style="margin:0">${esc(ep.now)}　<a href="https://www.google.com/search?tbm=isch&q=${encodeURIComponent(ep.title+" 老照片")}" target="_blank" rel="noopener">找「${esc(ep.title)}」老照片 ↗</a></p>
+
+      ${ep.care?`<h4>陪伴提醒</h4><div class="carebox"><b>注意：</b>${esc(ep.care)}</div>`:""}
+
+      <div class="copyrow">
+        <button class="ghost" id="copyq">複製聊天引子</button>
+        <button class="ghost" id="copyl">複製這一集的連結</button>
+      </div>
+    </div>`;
+  if(!dlg.open) dlg.showModal();
+  $("#sbody").scrollTop=0;
+  if(location.hash!=="#ep-"+id) history.replaceState(null,"","#ep-"+id);
+  bindSheet(ep);
+}
+function closeEp(){stopSpeech();if(dlg.open)dlg.close()}
+dlg.addEventListener("close",()=>{stopSpeech();if(location.hash.startsWith("#ep-"))history.replaceState(null,"",location.pathname+location.search)});
+dlg.addEventListener("click",e=>{if(e.target===dlg)closeEp()});
+
+function toast(msg){const t=$("#toast");t.textContent=msg;t.hidden=false;clearTimeout(toast._t);toast._t=setTimeout(()=>t.hidden=true,1800)}
+async function copy(text){try{await navigator.clipboard.writeText(text);toast("已複製")}catch(e){toast("無法自動複製，請手動選取文字")}}
+
+/* ---------- audio ---------- */
+const AUDIO=new Set([]);
+const HOST={m:{name:"阿城伯",badge:"城"},f:{name:"小晴",badge:"晴"}};
+function parseStory(text){
+  return text.split("\n").map(l=>l.trim()).filter(Boolean).map(l=>{
+    const m=l.match(/^(城|晴)：([\s\S]*)$/);
+    return m?{sp:m[1]==="城"?"m":"f",text:m[2]}:{sp:"m",text:l};
+  });
+}
+const fmt=t=>isFinite(t)?Math.floor(t/60)+":"+String(Math.floor(t%60)).padStart(2,"0"):"0:00";
+function stopSpeech(){const a=$("#aud"); if(a){a.pause()}}
+function bindSheet(ep){
+  const a=$("#aud"), play=$("#play"), seek=$("#seek"), time=$("#time");
+  let dragging=false;
+  if(!AUDIO.has(ep.id)){ play.disabled=true; play.style.opacity=.5; seek.disabled=true; $("#pnote").textContent="這一集的錄音還在製作中，請先閱讀下方的對談文字稿，或念給長輩聽。"; }
+  const ui=()=>{
+    const on=!a.paused&&!a.ended;
+    play.querySelector("span").textContent = on?"暫停":(a.currentTime>0&&!a.ended?"繼續說書":"開始說書");
+    play.querySelector("svg").innerHTML = on?'<path d="M6 4h4v16H6zM14 4h4v16h-4z"/>':'<path d="M7 4l13 8-13 8z"/>';
+  };
+  const tick=()=>{ if(!dragging&&a.duration) seek.value=Math.round(a.currentTime/a.duration*1000); time.textContent=fmt(a.currentTime)+(a.duration?" / "+fmt(a.duration):""); };
+  a.addEventListener("play",ui); a.addEventListener("pause",ui); a.addEventListener("ended",ui);
+  a.addEventListener("timeupdate",tick); a.addEventListener("loadedmetadata",tick);
+  a.addEventListener("error",()=>{ play.disabled=true; $("#pnote").textContent="這一集的錄音載入不了，請直接閱讀下方的對談文字稿，或念給長輩聽。"; });
+  play.onclick=()=>{ if(a.paused){ const p=a.play(); if(p&&p.catch) p.catch(()=>{}); } else a.pause(); };
+  seek.addEventListener("input",()=>{dragging=true; if(a.duration) time.textContent=fmt(seek.value/1000*a.duration)+" / "+fmt(a.duration)});
+  seek.addEventListener("change",()=>{ if(a.duration) a.currentTime=seek.value/1000*a.duration; dragging=false; });
+  document.querySelectorAll(".rate button").forEach(b=>b.onclick=()=>{
+    a.playbackRate=+b.dataset.r; document.querySelectorAll(".rate button").forEach(x=>x.setAttribute("aria-pressed",x===b));
+  });
+  $("#close").onclick=closeEp;
+  $("#copyq").onclick=()=>copy(`【台中說書人】第${+ep.id}集 ${ep.title}\n\n暖身：\n${ep.q.warm.map(x=>"・"+x).join("\n")}\n\n回憶：\n${ep.q.recall.map(x=>"・"+x).join("\n")}\n\n延伸：\n${ep.q.deep.map(x=>"・"+x).join("\n")}${ep.care?"\n\n注意："+ep.care:""}`);
+  $("#copyl").onclick=()=>copy(location.href.split("#")[0]+"#ep-"+ep.id);
+}
+
+/* ---------- hash routing ---------- */
+function route(){const m=location.hash.match(/^#ep-(\d+)$/);if(m)openEp(m[1].padStart(2,"0"));else if(dlg.open)closeEp()}
+window.addEventListener("hashchange",route);
+
+renderAll(); convert(); route();
+</script>
+
+</body>
+</html>
